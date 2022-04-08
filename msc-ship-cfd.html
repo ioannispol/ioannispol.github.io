@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <title>Title</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+    <body>
+
+        <header>
+            <h1>Title</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">🏡 HOME</a></li>
+                <li><a href="blog.html">📝 BLOG</a></li>
+                <li><a href="projects.html">🤖 PROJECTS</a></li>
+				<li><a href="photography.html">📸 PHOTOGRAPHY</a></li>
+                <li><a href="bio.html">ABOUTME</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <header>
+                <h2>SHIP HULL OPTIMIZATION BY USING BULBOUS STERN</h2>
+                <p class="intro">I worked on this project as part pf my MSc thesis</p>
+                <img style="max-height:30em;max-width:30em" src=images/cfd.jpg><a href="images/cfd.jpg"></a> 
+            </header>
+            
+            <p>The present study addresses the effectiveness of a bulbous stern in a container ship by estimating the resistance using semi-empirical and numerical methods (CFD).  The estimation of the resistance is a critical aspect of a ship which affects the power needed to propel the ship, hence the fuel consumption and the gas emissions to the environment. Container vessels are in continuous operation moving commodities of one place of the earth to the other. Therefore, it is vital to be able to operate with the least possible resistance in order to minimise fuel consumption and their carbon footprint. 
+            </p>
+            <p>For this reason, the hull should be as efficient as possible and can be achieved by applying different techniques to improve the resistance, one of which is the bulbous stern technic. A stern bulb has its basis on the effects of the bulbous bow, which creates an additional wave that that counteracts the wave that is created by the bow with a result a reduced drag. Similarly, a stern bulb attached on the ship’s transom redistributes the wave pattern at the transom area which leads to minimising the wave-making resistance.</p>
+            <p>
+                In this thesis, the concept of the Stern Bulb has been proposed for reducing the wave-making resistance. The particular area has not been extensively studied, and there are not extensive data to evaluate its effectiveness, especially using CFD simulations in a personal computer which by itself is a challenging task, thus different methods needed to be used such as the Holtrop’s method and Michell’s thin ship theory to validate the CFD results. The chosen container vessel was modelled in dedicated Naval Architecture software using parametric transformation, and a parent hull was obtained, which was the basis of the resistance estimation using bothe the semi-empirical methods and CFD. The next step involved the design of different models of bulbs in CAD software and the preparation of the geometry of the ship models for importing into CFD software for meshing and simulation.  
+
+            </p>
+            <p>
+                All models, the parent hull, together with the hulls with the different bulb shapes, were tested initially by the semi-empirical methods of resistance estimation, using Holtrop’s method as well as the estimation of the resistance using the analytical method based on Michell’s thin ship theory. From the results observed that Holtrop’s method is more an ideal estimation of the resistance and used to verify the CFD results because Holtrop’s method is incapable of modelling the stern bulb. On the other hand, Michell’s thin ship theory takes into account the wave resistance, which captures the behaviour of the bulbous stern more realistically. 
+            </p>
+            <p>
+                The same hulls were tested in CFD based on the same conditions (speed, draft, water density and temperature, sea condition) as those in the semi-empirical, and the analytical methods, using a multi-fluid domain with a free surface. Following, from the CFD simulations results, the hull with the best performance was chosen, and a full resistance curve was obtained, and compared with the semi-empirical results, and found that both tests giving similar outcome, which validates that the CFD simulations. Furthermore, the models were simulated in CFD in a mono-fluid domain in order to be able to compute the wave resistance to find the actual outcome of the resistance. These results were compared with the thin ship theory results and resistance curve found to have approximately similar behaviour. Finally,  a script which computes the wave resistance based in Michell’s used to evaluate the CFD wave resistance results. Both methods gave similar results up to a particular, where beyond that speed, Michell’s theory gave higher outcomes, which is because it overestimates the resistance at higher Froude numbers.  
+            </p>
+            <a class="btn btn-secondary" href="https://drive.google.com/file/d/155rVFRjje5QxcxFf3oMkSGivlStY88y8/view?usp=sharing" class="btn btn-secondary">Thesis Link</a>
+        </main>
+
+    </body>
+
+</html>

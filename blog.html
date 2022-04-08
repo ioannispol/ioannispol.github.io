@@ -1,116 +1,36 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Ioannis' Blog </title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <head>
+        <title>Blog Posts</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Ioannis Polymenis</a>
-					</header>
+    <body>
+        <header>
+            <h1>Blog Posts</h1>
+        </header>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li><a href="index.html">Profile</a></li>
-                            <li><a href="project.html">Profile</a></li>
-							<li><a href="resume.html">Resume</a></li>
-							<li class="active"><a href="blog.html">Blog</a></li>
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/giannis-polimenis/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-							<li><a href="https://github.com/ioannispol" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+    <nav>
+        <ul>
+            <li><a href="index.html">🏡 HOME</a></li>
+            <li><a href="blog.html">📝 BLOG</a></li>
+            <li><a href="projects.html">🤖 PROJECTS</a></li>
+            <li><a href="photography.html">📸 PHOTOGRAPHY</a></li>
+            <li><a href="bio.html">ABOUTME</a></li>
+        </ul>
 
-				<!-- Main -->
-					<div id="main">
+    </nav>
 
-						<!-- Post -->
-							<section class="post" id="website">
-								<header class="major">
-									<h1>Ioannis' Blog Posts</h1>
-                                </header>
-								<div class="image main"><img src="images/code_1.jpg" alt="" /><a id="website"></a></div>
-                                
-                                <h2>Virtual environments</h2>
-								<p>Developing Machine Learning (ML) and Deep Learning (DL) projects have become more common. ML and DL are literary everywhere nowadays, from big corporations to schools and universities, and used in areas from medicine to robotics. But with the extensive use and variability of the projects where ML/DL is used, some problems need to tackle. When working on and developing such projects, the most common issue is the conflict between different libraries. This problem can easily be solved if we use virtual environments.</p>
-								<p>A virtual environment is precisely what the word describes, an environment, a sandbox, where we install libraries and software particular to the project we're working on. In data science, ML and DL, the Anaconda environments are the most well-known platforms used to create and manage virtual environments.</p>
-								<p>Anaconda environments offer a simple and elegant solution to manage our settings based on the project requirements we're working on. I think the power of anaconda environments comes from using a different version of python from a single installation. Also, we can easily use other anaconda repositories to install the GPU versions of ML/DL frameworks such as TensorFlow and PyTorch with ease.</p>
-								<h3 id="installation">Installation</h3>
-								<p>The miniconda, a minimal version of Anaconda, will be installed here. Download the latest miniconda Linux installer script at https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh. Also, at <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda — Conda documentation</a>, different miniconda installers and for other platforms (Windows, MacOSX, Linux).</p>
-								<p>Once the installer is downloaded, open a terminal and navigate to the location the script has been downloaded. For me is in <code>/home/myusername/Downloads</code> First, check and verify the integrity of the installer</p>
-								<div class="sourceCode" id="cb1"><pre class="sourceCode zsh"><code class="sourceCode zsh"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>sha256sum Miniconda3-latest-Linux-x86_64.sh</span></code></pre></div>
-								<p>and will get something similar to <code>4ee9c3aa53329cd7a63b49877c0babb49b19b7e5af29807b793a76bdb1d362b4</code> this value needs to compare it with the one given on the miniconda site. If the values much mean the download is not corrupted and can continue with the installation.</p>
-								<p>Then need to make the script executable (if it is not already) using the <code>chmod</code> command and then run the installer itself with the <code>./program-to-install</code> This can be done by running the following command</p>
-								<div class="sourceCode" id="cb2"><pre class="sourceCode zsh"><code class="sourceCode zsh"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">chmod</span> +x Miniconda3-latest-Linux-x86_64.sh <span class="kw">&amp;&amp;</span> ./Miniconda3-latest-Linux-x86_64.sh</span></code></pre></div>
-								<p>The installation procedure is pretty clear after that point. Need to scroll down to the end of EULA terms and conditions and type <code>yes</code> to agree with them.</p>
-								<p>Also, it is a good idea to agree with the default installation path, which is usually under the path <code>/home/myusername/miniconda3</code>. The installation directory can also be specified to a different location, but you need to add it to the path variable on your system to run miniconda.</p>
-								<p>The following prompt is essential and will ask to initialize miniconda after the installation and need to type <code>yes</code>. If following the default, <code>no</code> will need to initialize miniconda manually. To do so need to manually initialize the shell you are using. For example, my shell is <code>zsh</code>, so the command will be <code>conda init zsh</code> and then need to restart your shell with</p>
-								<div class="sourceCode" id="cb3"><pre class="sourceCode zsh"><code class="sourceCode zsh"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">source</span> ~/.zshrc</span></code></pre></div>
-								<p>Now, the last step is not necessary, but Anaconda activates the base environment whenever you open your terminal by default, and I found that a bit annoying. So to remove the default functionality need to execute the following</p>
-								<div class="sourceCode" id="cb4"><pre class="sourceCode zsh"><code class="sourceCode zsh"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>conda config --set auto_activate_base <span class="kw">false</span></span></code></pre></div>
-								<hr />
-								<p><a href="https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/environments.html">Conda environments — conda 4.12.0.post16+7651023c documentation</a></p>
-							</section>
-							
-					</div>
+    <main>
+        <h2>2022</h2>
+    <ul>
+        <li>08 April 2022 -- <a href="blogs/ncl-naval.html">MSc Naval Architecture at Newcastle</a></li>
+        <li>07 April 2022 -- <a href="blogs/virtual-environments-miniconda-install.html">Virtual Environments</a></li>
+    </ul>
+    </main>
+    </body>
 
-				<!-- Footer -->
-				<footer id="footer">
-						
-					<section class="split contact">
-						<section class="alt">
-							<h3>Address</h3>
-							<p>33 Bothatl Street<br />
-							Newcastle upon Tybe, NE6 2JQ</p>
-						</section>
-						<section>
-							<h3>Phone</h3>
-							<p><a href="#">+44 7767 876368</a></p>
-						</section>
-						<section>
-							<h3>Email</h3>
-							<p><a href="mailto:giannis.polymenis@gmail.com">giannis.polymenis@gmail.com</a></p>
-						</section>
-						<section>
-							<h3>Social</h3>
-							<ul class="icons alt">
-								<li><a href="https://www.linkedin.com/in/giannis-polimenis/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-							<li><a href="https://github.com/ioannispol" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-							</ul>
-						</section>
-					</section>
-				</footer>
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Ioannis Polymenis 2020</li><li>Designed using: <a href="https://getbootstrap.com/">Bootstrap</a></li></ul>
-					</div>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
 </html>
