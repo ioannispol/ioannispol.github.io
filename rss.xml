@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="rss.css" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+<channel>
+<title>Ioannis Polymenis</title>
+<description>Updates from Ioannis Polymenis.</description>
+<language>en-uk</language>
+<link>http://ipolymenis.xyz/rss.xml</link>
+<atom:link href="http://ipolymenis.xyz/rss.xml" rel="self" type="application/rss+xml" />
+
+<!-- LB -->
+
+
+
+
+</channel>
+</rss>
