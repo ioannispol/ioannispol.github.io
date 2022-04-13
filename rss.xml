@@ -11,35 +11,377 @@
 
 <!-- LB -->
 
-		<item>
-			<guid isPermaLink="false">2486309800</guid>
-			<title>A Brief History of Machine Learning</title>
-			<link>https://ipolymenis.xyz/blogs/ml-history.html</link>
-			<category>Site News</category>
-			<pubDate>Wed, 13 Apr 2022 14:22:37 GMT</pubDate>
-		</item>
-		<item>
-			<guid isPermaLink="false">1842983475</guid>
-			<title>Virtual Environments with CPU and GPU support</title>
-			<link>https://ipolymenis.xyz/blogs/virt-env-gpu-conf.html</link>
-			<category>Site News</category>
-			<pubDate>Wed, 13 Apr 2022 14:22:37 GMT</pubDate>
-		</item>
-		<item>
-			<guid isPermaLink="false">2174466045</guid>
-			<title>MSc Naval Architecture at Newcastle</title>
-			<link>https://ipolymenis.xyz/blogs/ncl-naval.html</link>
-			<category>Site News</category>
-			<pubDate>Wed, 13 Apr 2022 14:22:37 GMT</pubDate>
-		</item>
-		<item>
-			<guid isPermaLink="false">2288736026</guid>
-			<title>Title</title>
-			<link>https://ipolymenis.xyz/blogs/virtual-environments-miniconda-install.html</link>
-			<category>Site News</category>
-			<pubDate>Wed, 13 Apr 2022 14:22:37 GMT</pubDate>
-		</item>
+<item>
+<title>Virtual Environments
+ #Wed, 13 Apr 2022 16:26:14 +0100</title>
+<guid>https://ipolymenis.xyz/2022.html#virtual-environments</guid>
+<pubDate>Wed, 13 Apr 2022 16:26:14 +0100</pubDate>
+<description><![CDATA[
+<h2>Virtual environments</h2>
+            <p style="text-align:center">
+                <img style="max-height:30em;max-width:30em;text-align: center" src=../images/blog-img.jpeg><a href="../images/blog-img.jpeg"></a>
+            </p>
+    <p>Developing Machine Learning (ML) and Deep Learning (DL) projects have become more common.
+        ML and DL are literary everywhere nowadays, from big corporations to schools and universities, 
+        and used in areas from medicine to robotics. But with the extensive use and variability of the 
+        projects where ML/DL is used, some problems need to tackle. When working on and developing such 
+        projects, the most common issue is the conflict between different libraries. This problem can 
+        easily be solved if we use virtual environments.</p>
 
+    <p>A virtual environment is precisely what the word describes, an environment, a sandbox, where we 
+        install libraries and software particular to the project we're working on. In data science, ML and DL, 
+        the Anaconda environments are the most well-known platforms used to create and manage virtual environments.</p>
+
+    <p>Anaconda environments offer a simple and elegant solution to manage our settings based on the project requirements we're working on. 
+        I think the power of anaconda environments comes from using a different version of python from a single installation. 
+        Also, we can easily use other anaconda repositories to install the GPU versions of ML/DL frameworks such as TensorFlow and PyTorch with ease.</p>
+
+    <h3 id="installation">Installation</h3>
+
+    <p>The miniconda, a minimal version of Anaconda, will be installed here. Download the latest miniconda 
+        Linux installer script at https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh. 
+        Also, at <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda — Conda documentation</a>, 
+        different miniconda installers and for other platforms (Windows, MacOSX, Linux).</p>
+
+    <p>Once the installer is downloaded, open a terminal and navigate to the location the script has been downloaded. 
+        For me is in <code>/home/myusername/Downloads</code> First, check and verify the integrity of the installer</p>
+
+    <div class="sourceCode" id="cb1"><pre class="sourceCode zsh"><code class="sourceCode zsh"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>sha256sum Miniconda3-latest-Linux-x86_64.sh</span></code></pre></div>
+    <p>and will get something similar to <code>4ee9c3aa53329cd7a63b49877c0babb49b19b7e5af29807b793a76bdb1d362b4</code> 
+        this value needs to compare it with the one given on the miniconda site. If the values much mean the download is 
+        not corrupted and can continue with the installation.</p>
+
+    <p>Then need to make the script executable (if it is not already) using the <code>chmod</code> command and then run the installer itself with the 
+        <code>./program-to-install</code> This can be done by running the following command</p>
+
+    <div class="sourceCode" id="cb2"><pre class="sourceCode zsh"><code class="sourceCode zsh"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">chmod</span> +x Miniconda3-latest-Linux-x86_64.sh <span class="kw">&amp;&amp;</span> ./Miniconda3-latest-Linux-x86_64.sh</span></code></pre></div>
+    <p>The installation procedure is pretty clear after that point. Need to scroll down to the end of EULA terms and conditions and type 
+        <code>yes</code> to agree with them.</p>
+
+    <p>Also, it is a good idea to agree with the default installation path, which is usually under the path 
+        <code>/home/myusername/miniconda3</code>. The installation directory can also be specified to a different location, 
+        but you need to add it to the path variable on your system to run miniconda.</p>
+
+    <p>The following prompt is essential and will ask to initialize miniconda after the installation and need to type <code>yes</code>. 
+        If following the default, <code>no</code> will need to initiaize miniconda manually. To do so need to manually initialize 
+        the shell you are using. For example, my shell is <code>zsh</code>, so the command will be <code>conda init zsh</code> 
+        and then need to restart your shell with</p>
+
+    <div class="sourceCode" id="cb3"><pre class="sourceCode zsh"><code class="sourceCode zsh"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">source</span> ~/.zshrc</span></code></pre></div>
+    <p>Now, the last step is not necessary, but Anaconda activates the base environment whenever you open your terminal by default, 
+        and I found that a bit annoying. So to remove the default functionality need to execute the following</p>
+]]></description>
+</item>
+
+
+<item>
+<title>Virtual Environments with GPU support
+ </title>
+<guid>https://ipolymenis.xyz/2022.html#virtual-environments-with-gpu-support</guid>
+<pubDate>Wed, 13 Apr 2022 16:27:59 +0100</pubDate>
+<description><![CDATA[
+<h2>Anaconda configuration for CPU and GPU</h2>
+                <p>Deploying a Machine Learning and Deep Learning project is not always straight forward particularly 
+                    when we need to run the model in the GPU if there is one in our machine. First of all, we need 
+                    to have a GPU that supports the CUDA library. The list of the CUDA supported GPUs can be found <a href="https://developer.nvidia.com/cuda-GPUs">here</a>. 
+                    The next step is to specify which framework we intend to use for our deployment, it will be TensorFlow, Pytorch, MXNET etc, 
+                    for this example, we will use the TensorFlow.</p>
+                <p>Before installing anything it is the best practice to use virtual environments to install the specific versions that we 
+                    want and keep the main system intact, otherwise by installing different versions for different projects we will face 
+                    many difficulties with the conflicting libraries. Here we'll use Anaconda to set up our virtual environments.</p>
+                <h2 id="installing-anaconda">Installing Anaconda</h2>
+                <p>The cool thing about using Anaconda is that allows us to install the required from the GPU drivers and not bother 
+                    to install the drivers locally to the machine, which could be rather a messy procedure. The other best thing when 
+                    using Anaconda environments is that we can have different environments with different CUDA and TensorFlow versions. 
+                    Also, when installing Anaconda Python is included.</p>
+                <p>I am using the Miniconda version which is much lighter than the full Anaconda version, and the Linux version can be downloaded from<a href="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh">here</a>.
+                    After the installation has finished we need to exit the terminal and open it again in order for the installation of Anaconda to take effect.</p>
+                <p>Before we setup the environment need to find the correct versions of CUDA, cuDNN, etc required by <a href="https://www.tensorflow.org/install/gpu">TensorFlow</a>.</p>
+                <h2 id="tensorflow-requirements">TensorFlow Requirements</h2>
+                <p>To istall <strong>TensorFlow 2.4</strong> and <strong>TensorFlow 2.4 GPU</strong>
+                    we need: 
+                    <ol>
+                    <li>Python 3.5 - 3.8 </li>
+                    <li>For Linux, Ubuntu 16.04 or later (we can use
+                        other Ubuntu based distros as well) </li>
+                    <li><a href="https://www.nvidia.com/drivers">NVIDIA® GPU drivers</a> —CUDA®
+                        11.0 requires 450.x or higher. </li>
+                    <li><a href="https://developer.nvidia.com/cuda-toolkit-archive">CUDA® Toolkit</a>
+                        —TensorFlow supports CUDA® 11 (TensorFlow &gt;= 2.4.0) </li>
+                    <li><a href="http://docs.nvidia.com/cuda/cupti/">CUPTI</a> ships with the CUDA®
+                        Toolkit.</li> 
+                    <li><a href="https://developer.nvidia.com/cudnn">cuDNN SDK 8.0.4</a>
+                        <a href="https://developer.nvidia.com/rdp/cudnn-archive">cuDNN versions</a>.</li>
+                    <li>7. (Optional) <a href="https://docs.nvidia.com/deeplearning/sdk/tensorrt-install-guide/index.html">TensorRT
+                        6.0</a> to improve latency and throughput for inference on some models.</li>
+                    </ol>
+                </p>
+            </h2>
+
+            <h2>Search Anaconda repos for the needed packages</h2>
+            <p>Since we'll use conda environments to install all the necessary drivers, only we need to 
+                ensure that the machine has the correct Nvidia GPU drivers (450.x or higher). 
+                Then we need to make check the Anaconda repositories to find if the above drivers exist. 
+                Fortunately, we can make use of the conda-forge channel, as well as th Nvidia channel to install these drivers. 
+                We can do that as follows:</p>
+
+            <pre style=max-width:600px;margin:auto;>
+                <code>conda search cuda</code>
+                <code>Loading channels: done
+                    No match found for: cuda. Search: *cuda*
+                    # Name                       Version           Build  Channel             
+                    cudatoolkit                      9.0      h13b8566_0  pkgs/main           
+                    cudatoolkit                      9.2               0  pkgs/main           
+                    cudatoolkit                 10.0.130               0  pkgs/main           
+                    cudatoolkit                 10.1.168               0  pkgs/main           
+                    cudatoolkit                 10.1.243      h6bb024c_0  pkgs/main           
+                    cudatoolkit                  10.2.89      hfd86e86_0  pkgs/main           
+                    cudatoolkit                  10.2.89      hfd86e86_1  pkgs/main           
+                    cudatoolkit                 11.0.221      h6bb024c_0  pkgs/main</code>
+            </pre>
+
+            <p>For cudnn will use the Nvidia channel:</p>
+
+            <pre style=max-width:600px;margin:auto;>
+                <code>conda search -c nvidia cudnn</code>
+                <code>Loading channels: done
+                    # Name                       Version           Build  Channel                       
+                    cudnn                          8.0.0      cuda10.2_0  nvidia              
+                    cudnn                          8.0.0      cuda11.0_0  nvidia              
+                    cudnn                          8.0.4      cuda10.1_0  nvidia              
+                    cudnn                          8.0.4      cuda10.2_0  nvidia              
+                    cudnn                          8.0.4      cuda11.0_0  nvidia              
+                    cudnn                          8.0.4      cuda11.1_0  nvidia</code>
+            </pre>
+
+            <p>So, for TF-2.4 we'll install:
+                <ol>
+                    <li>Python 3.8</li>
+                    <li>cudatoolkit 11.0</li>
+                    <li>cudnn 8.0.4</li>
+                    <li>tensorflow-gpu 2.4</li>
+                </ol>
+                Now that we have found the correct versions of the necessary libraries and drivers for the TF-2.4, 
+                the next step is to create the virtual environment, as the official Anaconda 
+                <a href="https://docs.anaconda.com/anaconda/user-guide/tasks/tensorflow/">documentation</a>
+                describes, that will host the packages and libraries required by TensorFlow with the following command:
+            </p>
+
+            <pre style=max-width:600px;margin:auto;><code>conda create -n tf24-cuda11 python=3.8</code></pre>
+            <p>After creating the <code>tf24-cuda11</code> environment, environment, we install the above packages plus the jupyter lab:</p>
+
+            <pre style=max-width:600px;margin:auto;><code>conda install cudatoolkit</code>
+                
+<code>conda install -c nvidia cudnn=8</code>
+                    
+<code>pip install tensorflow-gpu</code>
+            </pre>
+
+            <p>The <code>pip install tensorflow-gpu</code> command will install the Tensorflow GPU version, 
+                Tensorflow estimator, and Tensorflow base. We don't use conda to install TensorFlow-GPU because 
+                the latest TensorFlow version in the conda repo is 2.2 for Linux and 2.3 for Windows. 
+                If we do use<code>conda install tnsorflow-gpu</code>, it will install also CUDA 10.2 and cuDNN 7.</p>
+            <p>The <a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html">Jupyter
+                    Lab</a> can be installed from the conda-forge channel:</p>
+
+           <pre style=max-width:600px;margin:auto;><code>conda install-c conda-forge jupyterlab</code></pre>
+           
+           <p>In the new version of jupyter lab 3.x the <code>tab</code> completion does not work, 
+            and we need to downgrade the <code>jedi</code> library to 0.17.2. So, actually, we install:</p>
+            <pre style=max-width:600px;margin:auto;>
+                <code>conda install -c conda-forge jupyterlab</code>
+                <code>conda install -c conda-forge jedi=0.17.2</code>
+            </pre>
+        
+            <p>Additionally, I have created a <code>requiremets.txt</code> to install some extra frameworks and libraries such as: 
+                <ol>
+                    <li>Matplotlib</li>
+                    <li>OpenCV</li>
+                    <li>Scikit-learn</li>
+                    <li>Pillow, etc</li>
+                </ol>
+                with the following command: <code>pip install -r requiremets.txt</code>
+            </p>
+        
+        <h2>Register the environment</h2>
+        <p>It is also a good practice to register the ipykernel for the given environment. 
+            After activating the conda environment, in this case, is <code>conda
+            activate tf24-cuda11</code> we use the following command to 
+            <a href="https://ipython.readthedocs.io/en/stable/install/kernel_install.html">link</a>
+            the kernel with the environment using <code>ipykernel install --user --name
+            myenv --display-name "my_environment_name"</code>:</p>
+             
+            <pre style=max-width:600px;margin:auto;>
+<code>ipykernel install --user --name tf24-cuda11 --display-name "Python 3.8.5 (tf24-cuda11)"</code></pre>
+Test the environment
+
+        <h2>Test the environment</h2>
+        <p>After completing the above steps we can test the installation.</p>
+        <pre style=max-width:600px;margin:auto;>
+<code>
+    import sys
+
+    import tensorflow.keras
+    import pandas as pd
+    import sklearn as sk
+    import tensorflow as tf
+    
+    print(f"Tensor Flow Version: {tf.__version__}")
+    print(f"Keras Version: {tensorflow.keras.__version__}")
+    print()
+    print(f"Python {sys.version}")
+    print(f"Pandas {pd.__version__}")
+    print(f"Scikit-Learn {sk.__version__}")
+    logical_gpus = tf.config.experimental.list_logical_devices('GPU')
+    print(len(logical_gpus), "Physical GPUs,", len(logical_gpus), "Logical GPUs")
+    print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))
+    
+    Tensor Flow Version: 2.4.1
+    Keras Version: 2.4.0
+    
+    Python 3.8.5 (default, Sep  4 2020, 07:30:14) 
+    [GCC 7.3.0]
+    Pandas 1.2.1
+    Scikit-Learn 0.24.1
+    1 Physical GPUs, 1 Logical GPUs
+    Num GPUs Available:  1</code>
+        </pre>
+
+        <h2>Managing the Environment</h2>
+        <p>So far we have created the environment for TensorFlow 2.4 with the appropriate 
+            CUDA and cuDNN drivers installed through conda repos. Also, to make our life easier, 
+            the different libraries are installed using the <code>requirements.txt</code>
+            file. Now, it's a good opportunity to export the environment by creating a
+            <code>.yml</code> file using the command:</p>
+
+            <pre style=max-width:600px;margin:auto;>
+                <code>conda env export > tf24-cuda11.yml</code>
+            </pre>
+            <p>Finally, with this way, of using Anaconda environments to install CUDA drivers, 
+                we can install multiple versions of TensorFlow as well as other ML/DL frameworks, 
+                without mess the systems libraries. Also, another way is to use Docker containers, 
+                more details can be found:
+                <ul>
+                    <li><a href="https://www.tensorflow.org/install">In TensorFlow’s installation
+                        guide</a></li>
+                    <li><a href="https://blog.kovalevskyi.com/multiple-version-of-cuda-libraries-on-the-same-machine-b9502d50ae77">In
+                        this Medium article</a></li>
+                    <li><a href="https://towardsdatascience.com/managing-cuda-dependencies-with-conda-89c5d817e7e1">Managing
+                        CUDA dependencies with Conda</a></li>
+                        
+                    </ul>
+                </p>
+]]></description>
+</item>
+
+<item>
+<title>ncl-naval</title>
+<guid>https://ipolymenis.xyz/2022.html#nclnaval</guid>
+<pubDate>Wed, 13 Apr 2022 16:23:23 +0100</pubDate>
+<description><![CDATA[
+<h2>Why I chose to study MSc Naval Architecture at Newcastle</h2>
+            <h3>Course Content</h3>
+            <p>I chose to study MSc in Naval Architecture at Newcastle University because I was particularly interested in the course's core modules.
+                Having worked on ships as a seagoing engineer for more than ten years, I was keen on learning more about the principles that play a vital 
+                role in the ship's operation. In addition, from my earlier studies, I was really enthusiastic about Fluid dynamics, particularly with ship 
+                hydrodynamics, about the enormous ship structures and their performance at sea, and the operation and the logistics required to operate 
+                and move ships across the world.
+            </p>
+            <p>          
+                The course offers a straightforward though a challenging combination of all the above, some of the course's core modules are:
+                <ul>
+                    <li>Advanced Hydrodynamics</li>
+                    <li>Advanced Marine Structures</li>
+                    <li>Advanced Naval Architecture</li>
+                    <li>Ship Performance at Sea</li>
+                </ul>
+            </p>
+
+
+            <h3>Ranking and Reputation</h3>
+                <p>The marine sector plays an essential role in the global economy and trade, but the field itself can be described as a close environment; and when it comes to reputation, it is essential to choose wisely where will you go to study. There are only a handful of choices in the UK or globally when it comes to Marine Technology studies.
+                Newcastle University stands out because of its rich and long history and tradition in both Marine Engineering and Naval Architecture, and its reputation is well known among shipping companies.
+                Marine Technology at Newcastle is also double accredited by the Royal Institution of Naval Architects (RINA) and the Institute of Marine Engineering, Science and Technology (IMarEST), which opens more opportunities!</p>
+
+            <h3>Facilities and Academics</h3>
+                <p>Let's start with the people who constitute the department. The academic staff are excellent, and with great knowledge, they are ready to help whenever needed.
+                They are actively involved in lecturing, in research and with the industry. I found this extraordinary because there is the potential to expand our contacts from academia to industry. But the most important is that I feel like being a part of a larger family!
+                Now regarding the facilities, Newcastle University is one of the most well-equipped universities, with the most important being the newly reconstructed Emmerson Cavitation tunnel in Blyth, the school's research vessel (The Princess Royal) and last but not least, the Towing tank and the Wind, Wave and Current tank (WWCT) in the campus.</p>
+            <h3>The campus and the city</h3>
+                <p>Newcastle upon Tyne!!! The name speaks by itself. By far one of the most beautiful cities in the world.
+                Having sailed around the globe as a seafarer, I have visited many cities; some are huge and ugly, others are beautiful with rude people, others are cold and not interesting, but no city can be compared with Newcastle.
+                The city of Newcastle has a pleasing balance between a large and small city and offers a range of exquisite places such as the quayside and the Jesmond Dene.
+                It has a mixture of warm and welcoming local people (the Geordies) and people from all around the world, making the city one the most attractive.
+                The campus itself is a remarkable place in the city's heart, with the most notable buildings being the Armstrong building (where the Marine department is located) and the Old Library.</p>
+]]></description>
+</item>
+
+
+<item>
+<title>ml-history</title>
+<guid>https://ipolymenis.xyz/2022.html#mlhistory</guid>
+<pubDate>Wed, 13 Apr 2022 16:20:47 +0100</pubDate>
+<description><![CDATA[
+<h2>Machine Learning a brief history</h2>
+            <p style="text-align:center">
+                <img style="max-height:30em;max-width:30em;text-align: center" src=../images/istockphoto-1328881695-612x612.jpg><a href="../images/istockphoto-1328881695-612x612.jpg"></a>
+            </p>
+
+            <div class="center">
+                <p class="cryptoinfo">
+                  <strong>  
+                  A brief history of Machine Learning based on my work for Autonomous Underwater Intervention using Intelligent Computer Vision methods.  
+                </strong>
+                </p>
+            </div>
+
+            <p>
+                The concept of Machine Learning originated in the 1950s when the Computer Science pioneer Alan Turing proposed the question “Can machines think?” in the paper “Computing Machinery and Intelligence” (Turing, 1950) and introduced the famous “Turing test” which explains how an intelligent machine should perform and other concepts that give life to modern Artificial Intelligence (AI) and Machine Learning (ML). The general concept that Turing proposes is how a general-purpose computer can learn to perform a specific task on its own. In classical computer programming, the human gives instructions (the program) and data to be processed to the computer and the output is the answer to the problem. In contrast, with machine learning, humans give the data and the answers to the computer and the outputs are the rules that the computer developed during the process, and these rules can be further applied to new data to generate novel answers.
+            </p>
+            <p>
+                In the early days, Machine Learning was connected with Artificial Intelligence and tried to develop systems that were equipped with intelligence and could be adopted in complex environments to change computer behaviour accordingly (Langley, 2011). Thus, it can be said that early machine learning models focused on acquiring knowledge and understanding the surrounding environment, and only later focused on developing complex mathematical and statistical models (Michalski et al., 1983).
+            </p>
+            <p>
+                Machine Learning, in the present, is a rapidly growing field and is used in many different areas and disciplines, among them are various industries such as the oil/gas industry and shipping industry, the financial sector, the healthcare system, autonomous cars and robots. One of the most important machine learning applications is image recognition and classification since the present world has abundant digital images. Other machine learning applications are found in day-to-day activities such as web searches, smartphone speech recognition systems, and camera face detection modes. The research around the Machine Learning field and generally in Artificial Intelligence is a strong and rapidly growing that has already developed self-driving car prototypes, autonomous Unmanned Aerial Vehicles (UAVs), and Autonomous Underwater Vehicles (AUVs) which are capable of self-navigating without human intervention.
+            </p>
+            <p>
+                The growth of machine learning was mainly possible during the last decade because of the unprecedented expansion of computing power and the abundance of available data (Big Data), as well as the development of more sophisticated and efficient neural network algorithms which allowed the explosion of machine learning applications. Artificial Neural Networks were proposed for the first time in 1943 by McCulloch & Pitts, McCulloch & Pitts (1943) who introduced simple artificial neurons that were designed as electric circuits based on human biological neurons.
+            </p>
+            <p>
+                In 1986 Rosenberg and Terrence (1986) introduce a revolutionary, for the time, network which was able to convert English text to speech, and could learn by itself to pronounce more than 20,000 words (Sejnowski & Rosenberg, 1986). Another significant breakthrough in the science of neural networks was the studies of Rumelhart ad Hinton (Rumelhart et al., 1986; Hinton, 1990) where they proposed a novel learning method using back-propagation in neuron networks. The back-propagation method repeatedly adjusts the weights between the neuron connections of the network to minimise the output error. In the same period (LeCun et al., 1990) used networks with back-propagation for handwritten digit recognition. The main objective of that research was to demonstrate that neural networks can be used for image recognition problems without complex data reprocessing. The handwritten digit recognition back-propagation algorithm was later used for the development of a multilayer neural network and the development of the MNIST Dataset for handwritten digit recognition (LeCun et al., 1998). Specifically designed Convolutional Neural Networks (CNNs) deal with the variability of the inputs which are images of handwritten digits.
+            </p>
+            <p>
+                However, it was not until the mid of 2000s that the first significant breakthrough in machine learning and the use of deep learning networks occurred when Hinton and Salakhutdinov (2006) proposed a new way of training a deep neural network and Deep Learning was once more the focus. The work of (Hinton & Salakhutdinov, 2006) suggests that the training of deep models could be done one layer at a time, and they observed that the performance was particularly good with even just three hidden layers. This, deep learning model, was tested on handwritten digit images and gave much higher success in digit classification than any previous algorithms. The evolution of Machine Learning and Deep Learning was continued over the following years with many significant contributions in different areas of the field such as the use of unsupervised learning techniques for the development of an exceptional model which corrects any corruption of the input data as Vincent et al. (2008) presented.
+            </p>
+            <p>
+                The developments in machine learning as well as in deep learning continued the over the following years in areas of image recognition, face recognition, speech recognition, natural language processing, real-time translation and even the first intelligent system, with Google’s Brain project of AlphaGo, which beat a human professional player in the game of Go without human intervention, in 2017 (Silver et al., 2017). Furthermore, in the image classification competition organised by ImageNet, the ILSVRC (ImageNet Large Scale Visual Recognition Challenge), the top five image classification error has been decreasing since its inception in 2009 (Jia Deng et al., 2009) and reached an astonishing 2.3%4 which is well below the human performance of around 5% error rate (Hu et al., 2018).
+
+            </p>
+            <p>
+                The evolution of Machine Learning shows that, although it started as a branch of the AI, today it has evolved to be a completely different field of computer science focused more on mathematical and statistical models and theories, with the aim to train the machines to “learn” from data rather than acquiring a more abstract understanding of their environment as AI does. Therefore, with the boom of data as well as with the explosion in capabilities of computer hardware, Machine Learning models have become more efficient in specific tasks, such as image recognition, and consequently, this has made possible another, long-forgotten field, that of Deep Learning.
+            </p>
+
+            <p>
+                <h2>References</h2>
+                <ul>
+                    <li>Hinton, G.E. (1990) Mapping part-whole hierarchies into connectionist networks. Artificial Intelligence. 46 (1–2), 47–75.</li>
+                    <li>Hinton, G.E., Osindero, S. & Teh, Y.W. (2006) A fast learning algorithm for deep belief nets. Neural Computation. 18 (7), 1527–1554.</li>
+                    <li>Hinton, G.E. & Salakhutdinov, R.R. (2006) Reducing the dimensionality of data with neural networks. Science. 313 (5786), 504–507.</li>
+                    <li>Hu, J., Shen, L. & Sun, G. (2018) ’Squeeze-and-Excitation Networks’, in Proceedings of the ieee computer society conference on computer vision and pattern recognition. [Online]. 2018 pp. 71327141.</li>
+                    <li>Langley, P. (2011) The changing science of machine learning. Machine Learning. 82 (3), 275–279.</li>
+                    <li>LeCun, Y., Boser, B.E., Denker, J.S., Henderson, D., Howard, R.E., Hubbard, W.E. & Jackel, L.D. (1990) ’Handwritten Digit Recognition with a Back-Propagation Network’, in Advances in neural information processing systems. [Online]. 1990 pp. 396 — –404.</li>
+                    <li>LeCun, Y., Bottou, L., Bengio, Y. & Haffner, P. (1998) Gradient-based learning applied to document recognition. Proceedings of the IEEE. 86 (11), 2278–2323.</li>
+                    <li>LeCun, Y., Jackel, L.D., Bottou, L., Cortes, C., Denker, J.S., Drucker, H., Guyon, I., Muller, U.a., Sackinger, E., Simard, P. & Vapnik, V. (1995) ’Learning algorithms for classification: A comparison on handwritten digit recognition’, in Neural networks: The statistical mechanics perspective. [Online]. World Scientific. pp. 261–276.</li>
+                    <li>McCulloch, W.S. & Pitts, W. (1943) A logical calculus of the ideas immanent in nervous activity. The Bulletin of Mathematical Biophysics. 5 (4), 115–133.</li>
+                    <li>Rumelhart, D.E., Hinton, G.E. & Williams, R.J. (1986) Learning representations by back-propagating errors. Nature. 323 (6088), 533–536.</li>
+                    <li>Sejnowski, T. & Rosenberg, C. (1986) NETtalk: A parallel network that learns to read aloud. The Johns Hopkins University Electrical Engineering and Computer Science Technical Report. 01663–672.</li>
+                    <li>Silver, D., Schrittwieser, J., Simonyan, K., Antonoglou, I., Huang, A., Guez, A., Hubert, T., Baker, L., Lai, M., Bolton, A., Chen, Y., Lillicrap, T., Hui, F., Sifre, L., Van Den Driessche, G., Graepel, T. & Hassabis, D. (2017) Mastering the game of Go without human knowledge. Nature. 550 (7676), 354–359.</li>
+                    <li>Turing, A.M. (1950) ’Computing machinery and intelligence’, in Machine intelligence: Perspectives on the computational model. [Online]. Taylor; Francis. pp. 1–28.</li>
+                    <li>Vincent, P., Larochelle, H., Bengio, Y. & Manzagol, P.A. (2008) ’Extracting and composing robust features with denoising autoencoders’, in Proceedings of the 25th international conference on machine learning. [Online]. 2008 pp. 1096–1103.</li>
+                    </ul>
+            </p>
+]]></description>
+</item>
 
 </channel>
 </rss>

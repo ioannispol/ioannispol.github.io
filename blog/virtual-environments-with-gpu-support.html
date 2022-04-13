@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Virtual Environments with GPU support
+ </title>
+<link rel='stylesheet' type='text/css' href='../style.css'>
+<meta charset='utf-8'/>
+<meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no'>
+</head>
+<body>
+<h1>Virtual Environments with GPU support
+ </h1>
+<nav>
+<ul>
+<li><a href='../index.html'>🏡 HOME</a></li>
+<li><a href='../blog.html'>📝 BLOG</a></li>
+<li><a href='../projects.html'>🤖 PROJECTS</a></li>
+<li><a href='../photography.html'>📸 PHOTOGRAPHY</a></li>
+<li><a href='../bio.html'>ABOUTME</a></li>
+</ul>
+</nav>
+<small>[<a href='../2022.html#virtual-environments-with-gpu-support'>link</a>&mdash;<a href='virtual-environments-with-gpu-support.html'>standalone</a>]</small>
+<main>
+<h2>Anaconda configuration for CPU and GPU</h2>
+                <p>Deploying a Machine Learning and Deep Learning project is not always straight forward particularly 
+                    when we need to run the model in the GPU if there is one in our machine. First of all, we need 
+                    to have a GPU that supports the CUDA library. The list of the CUDA supported GPUs can be found <a href="https://developer.nvidia.com/cuda-GPUs">here</a>. 
+                    The next step is to specify which framework we intend to use for our deployment, it will be TensorFlow, Pytorch, MXNET etc, 
+                    for this example, we will use the TensorFlow.</p>
+                <p>Before installing anything it is the best practice to use virtual environments to install the specific versions that we 
+                    want and keep the main system intact, otherwise by installing different versions for different projects we will face 
+                    many difficulties with the conflicting libraries. Here we'll use Anaconda to set up our virtual environments.</p>
+                <h2 id="installing-anaconda">Installing Anaconda</h2>
+                <p>The cool thing about using Anaconda is that allows us to install the required from the GPU drivers and not bother 
+                    to install the drivers locally to the machine, which could be rather a messy procedure. The other best thing when 
+                    using Anaconda environments is that we can have different environments with different CUDA and TensorFlow versions. 
+                    Also, when installing Anaconda Python is included.</p>
+                <p>I am using the Miniconda version which is much lighter than the full Anaconda version, and the Linux version can be downloaded from<a href="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh">here</a>.
+                    After the installation has finished we need to exit the terminal and open it again in order for the installation of Anaconda to take effect.</p>
+                <p>Before we setup the environment need to find the correct versions of CUDA, cuDNN, etc required by <a href="https://www.tensorflow.org/install/gpu">TensorFlow</a>.</p>
+                <h2 id="tensorflow-requirements">TensorFlow Requirements</h2>
+                <p>To istall <strong>TensorFlow 2.4</strong> and <strong>TensorFlow 2.4 GPU</strong>
+                    we need: 
+                    <ol>
+                    <li>Python 3.5 - 3.8 </li>
+                    <li>For Linux, Ubuntu 16.04 or later (we can use
+                        other Ubuntu based distros as well) </li>
+                    <li><a href="https://www.nvidia.com/drivers">NVIDIA® GPU drivers</a> —CUDA®
+                        11.0 requires 450.x or higher. </li>
+                    <li><a href="https://developer.nvidia.com/cuda-toolkit-archive">CUDA® Toolkit</a>
+                        —TensorFlow supports CUDA® 11 (TensorFlow &gt;= 2.4.0) </li>
+                    <li><a href="http://docs.nvidia.com/cuda/cupti/">CUPTI</a> ships with the CUDA®
+                        Toolkit.</li> 
+                    <li><a href="https://developer.nvidia.com/cudnn">cuDNN SDK 8.0.4</a>
+                        <a href="https://developer.nvidia.com/rdp/cudnn-archive">cuDNN versions</a>.</li>
+                    <li>7. (Optional) <a href="https://docs.nvidia.com/deeplearning/sdk/tensorrt-install-guide/index.html">TensorRT
+                        6.0</a> to improve latency and throughput for inference on some models.</li>
+                    </ol>
+                </p>
+            </h2>
+
+            <h2>Search Anaconda repos for the needed packages</h2>
+            <p>Since we'll use conda environments to install all the necessary drivers, only we need to 
+                ensure that the machine has the correct Nvidia GPU drivers (450.x or higher). 
+                Then we need to make check the Anaconda repositories to find if the above drivers exist. 
+                Fortunately, we can make use of the conda-forge channel, as well as th Nvidia channel to install these drivers. 
+                We can do that as follows:</p>
+
+            <pre style=max-width:600px;margin:auto;>
+                <code>conda search cuda</code>
+                <code>Loading channels: done
+                    No match found for: cuda. Search: *cuda*
+                    # Name                       Version           Build  Channel             
+                    cudatoolkit                      9.0      h13b8566_0  pkgs/main           
+                    cudatoolkit                      9.2               0  pkgs/main           
+                    cudatoolkit                 10.0.130               0  pkgs/main           
+                    cudatoolkit                 10.1.168               0  pkgs/main           
+                    cudatoolkit                 10.1.243      h6bb024c_0  pkgs/main           
+                    cudatoolkit                  10.2.89      hfd86e86_0  pkgs/main           
+                    cudatoolkit                  10.2.89      hfd86e86_1  pkgs/main           
+                    cudatoolkit                 11.0.221      h6bb024c_0  pkgs/main</code>
+            </pre>
+
+            <p>For cudnn will use the Nvidia channel:</p>
+
+            <pre style=max-width:600px;margin:auto;>
+                <code>conda search -c nvidia cudnn</code>
+                <code>Loading channels: done
+                    # Name                       Version           Build  Channel                       
+                    cudnn                          8.0.0      cuda10.2_0  nvidia              
+                    cudnn                          8.0.0      cuda11.0_0  nvidia              
+                    cudnn                          8.0.4      cuda10.1_0  nvidia              
+                    cudnn                          8.0.4      cuda10.2_0  nvidia              
+                    cudnn                          8.0.4      cuda11.0_0  nvidia              
+                    cudnn                          8.0.4      cuda11.1_0  nvidia</code>
+            </pre>
+
+            <p>So, for TF-2.4 we'll install:
+                <ol>
+                    <li>Python 3.8</li>
+                    <li>cudatoolkit 11.0</li>
+                    <li>cudnn 8.0.4</li>
+                    <li>tensorflow-gpu 2.4</li>
+                </ol>
+                Now that we have found the correct versions of the necessary libraries and drivers for the TF-2.4, 
+                the next step is to create the virtual environment, as the official Anaconda 
+                <a href="https://docs.anaconda.com/anaconda/user-guide/tasks/tensorflow/">documentation</a>
+                describes, that will host the packages and libraries required by TensorFlow with the following command:
+            </p>
+
+            <pre style=max-width:600px;margin:auto;><code>conda create -n tf24-cuda11 python=3.8</code></pre>
+            <p>After creating the <code>tf24-cuda11</code> environment, environment, we install the above packages plus the jupyter lab:</p>
+
+            <pre style=max-width:600px;margin:auto;><code>conda install cudatoolkit</code>
+                
+<code>conda install -c nvidia cudnn=8</code>
+                    
+<code>pip install tensorflow-gpu</code>
+            </pre>
+
+            <p>The <code>pip install tensorflow-gpu</code> command will install the Tensorflow GPU version, 
+                Tensorflow estimator, and Tensorflow base. We don't use conda to install TensorFlow-GPU because 
+                the latest TensorFlow version in the conda repo is 2.2 for Linux and 2.3 for Windows. 
+                If we do use<code>conda install tnsorflow-gpu</code>, it will install also CUDA 10.2 and cuDNN 7.</p>
+            <p>The <a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html">Jupyter
+                    Lab</a> can be installed from the conda-forge channel:</p>
+
+           <pre style=max-width:600px;margin:auto;><code>conda install-c conda-forge jupyterlab</code></pre>
+           
+           <p>In the new version of jupyter lab 3.x the <code>tab</code> completion does not work, 
+            and we need to downgrade the <code>jedi</code> library to 0.17.2. So, actually, we install:</p>
+            <pre style=max-width:600px;margin:auto;>
+                <code>conda install -c conda-forge jupyterlab</code>
+                <code>conda install -c conda-forge jedi=0.17.2</code>
+            </pre>
+        
+            <p>Additionally, I have created a <code>requiremets.txt</code> to install some extra frameworks and libraries such as: 
+                <ol>
+                    <li>Matplotlib</li>
+                    <li>OpenCV</li>
+                    <li>Scikit-learn</li>
+                    <li>Pillow, etc</li>
+                </ol>
+                with the following command: <code>pip install -r requiremets.txt</code>
+            </p>
+        
+        <h2>Register the environment</h2>
+        <p>It is also a good practice to register the ipykernel for the given environment. 
+            After activating the conda environment, in this case, is <code>conda
+            activate tf24-cuda11</code> we use the following command to 
+            <a href="https://ipython.readthedocs.io/en/stable/install/kernel_install.html">link</a>
+            the kernel with the environment using <code>ipykernel install --user --name
+            myenv --display-name "my_environment_name"</code>:</p>
+             
+            <pre style=max-width:600px;margin:auto;>
+<code>ipykernel install --user --name tf24-cuda11 --display-name "Python 3.8.5 (tf24-cuda11)"</code></pre>
+Test the environment
+
+        <h2>Test the environment</h2>
+        <p>After completing the above steps we can test the installation.</p>
+        <pre style=max-width:600px;margin:auto;>
+<code>
+    import sys
+
+    import tensorflow.keras
+    import pandas as pd
+    import sklearn as sk
+    import tensorflow as tf
+    
+    print(f"Tensor Flow Version: {tf.__version__}")
+    print(f"Keras Version: {tensorflow.keras.__version__}")
+    print()
+    print(f"Python {sys.version}")
+    print(f"Pandas {pd.__version__}")
+    print(f"Scikit-Learn {sk.__version__}")
+    logical_gpus = tf.config.experimental.list_logical_devices('GPU')
+    print(len(logical_gpus), "Physical GPUs,", len(logical_gpus), "Logical GPUs")
+    print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))
+    
+    Tensor Flow Version: 2.4.1
+    Keras Version: 2.4.0
+    
+    Python 3.8.5 (default, Sep  4 2020, 07:30:14) 
+    [GCC 7.3.0]
+    Pandas 1.2.1
+    Scikit-Learn 0.24.1
+    1 Physical GPUs, 1 Logical GPUs
+    Num GPUs Available:  1</code>
+        </pre>
+
+        <h2>Managing the Environment</h2>
+        <p>So far we have created the environment for TensorFlow 2.4 with the appropriate 
+            CUDA and cuDNN drivers installed through conda repos. Also, to make our life easier, 
+            the different libraries are installed using the <code>requirements.txt</code>
+            file. Now, it's a good opportunity to export the environment by creating a
+            <code>.yml</code> file using the command:</p>
+
+            <pre style=max-width:600px;margin:auto;>
+                <code>conda env export > tf24-cuda11.yml</code>
+            </pre>
+            <p>Finally, with this way, of using Anaconda environments to install CUDA drivers, 
+                we can install multiple versions of TensorFlow as well as other ML/DL frameworks, 
+                without mess the systems libraries. Also, another way is to use Docker containers, 
+                more details can be found:
+                <ul>
+                    <li><a href="https://www.tensorflow.org/install">In TensorFlow’s installation
+                        guide</a></li>
+                    <li><a href="https://blog.kovalevskyi.com/multiple-version-of-cuda-libraries-on-the-same-machine-b9502d50ae77">In
+                        this Medium article</a></li>
+                    <li><a href="https://towardsdatascience.com/managing-cuda-dependencies-with-conda-89c5d817e7e1">Managing
+                        CUDA dependencies with Conda</a></li>
+                        
+                    </ul>
+                </p>
+</main>
+<footer>by <strong><a href='https://ipolymenis.xyz/'>Ioannis Polymenis</a></strong></footer>
+</body>
+
+</html>
