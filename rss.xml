@@ -11,7 +11,38 @@
 
 <!-- LB -->
 
-
+<item>
+			<guid isPermaLink="false">2486309800</guid>
+			<title>A Brief History of Machine Learning</title>
+			<link>https://ipolymenis.xyz/blogs/ml-history.html</link>
+			<dc:creator>Ioannis Polymenis</dc:creator>
+			<category>Site News</category>
+			<pubDate>Wed, 13 Apr 2022 14:22:37 GMT</pubDate>
+		</item>
+		<item>
+			<guid isPermaLink="false">1842983475</guid>
+			<title>Virtual Environments with CPU and GPU support</title>
+			<link>https://ipolymenis.xyz/blogs/virt-env-gpu-conf.html</link>
+			<dc:creator>Ioannis Polymenis</dc:creator>
+			<category>Site News</category>
+			<pubDate>Wed, 13 Apr 2022 14:22:37 GMT</pubDate>
+		</item>
+		<item>
+			<guid isPermaLink="false">2174466045</guid>
+			<title>MSc Naval Architecture at Newcastle</title>
+			<link>https://ipolymenis.xyz/blogs/ncl-naval.html</link>
+			<dc:creator>Ioannis Polymenis</dc:creator>
+			<category>Site News</category>
+			<pubDate>Wed, 13 Apr 2022 14:22:37 GMT</pubDate>
+		</item>
+		<item>
+			<guid isPermaLink="false">2288736026</guid>
+			<title>Title</title>
+			<link>https://ipolymenis.xyz/blogs/virtual-environments-miniconda-install.html</link>
+			<dc:creator>Ioannis Polymenis</dc:creator>
+			<category>Site News</category>
+			<pubDate>Wed, 13 Apr 2022 14:22:37 GMT</pubDate>
+		</item>
 
 
 </channel>
