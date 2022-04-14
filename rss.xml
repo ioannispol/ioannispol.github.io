@@ -12,6 +12,108 @@
 <!-- LB -->
 
 <item>
+<title>3yrs into Machine Learning as a PhD student</title>
+<guid>https://ipolymenis.xyz/2022.html#3yrs-into-machine-learning-as-a-phd-student</guid>
+<pubDate>Thu, 14 Apr 2022 17:16:21 +0100</pubDate>
+<description><![CDATA[
+<!-- directives:[] -->
+<div id="content"><h1 id="3yrsintomachinelearningasaphdstudent">3yrs into Machine Learning as a PhD student</h1>
+    <p style="text-align:center">
+        <img style="max-height:30em;max-width:30em;text-align: center" src=../images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg><a href="../images/istockphoto-1328881695-612x612.jpg"></a>
+    </p>
+    <h2 id="introduction">Introduction</h2>
+    <p>So it has been almost 3 years and a half since I started my PhD in Autonomous Underwater Vehicles (AUVs), where I'm using Machine Learning, Deep Learning and Computer Vision to create a framework for autonomous underwater intervention. Puff, this was relatively quick to describe 3 and 1/2 years in one sentence. Anyway, to the point. So, what I've learned during those years, and how easy (or maybe not) it's to get into the magic world of AI? Well, I realised that it's not easy at all. Getting into ML is not an easy task and needs to have a lot of patience. </p>
+    <p>Learning the concepts of Machine Learning, Computer Vision, and Deep Learning is something that initially I thought could be learnt in a year or two. After all, I knew most of the mathematical concepts needed for ML since I was in a STEM field for the past four years. I had relatively advanced knowledge of Algebra, Matrix Algebra, I was reasonably fluent in calculus, etc. I was good at problem-solving through my years in university, but a professional marine engineer for more than 10 years. </p>
+    <p>I learned those 2 years that there is no such thing as "I know Machine Learning". This is because fields such as Machine Learning rapidly evolve, particularly in the last years, making it even harder to learn the entire area (if this is possible) even after many years in the field. </p>
+    <p>So, in this article, I would like to give the experience I had over the past 3 years, mainly studying Machine Learning for my PhD research project. This point of view will definitely be biased towards the more academic point of view since I lack the experience that someone has working in the industry.    </p>
+    <p>First, I'll go through the road I followed from the beginning until now. Then I'll spend some time on what I did right and wrong. Last, I want to give some of my thoughts on whether the journey worth or not.</p>
+    <hr />
+    <h2 id="myroadmaptoml">My roadmap to ML</h2>
+    <p>We leave indeed in extraordinary times in terms of information and availability of learning material for almost anything we want to learn. Of course with so many options ready available, and most of the time free, to us it's difficult to choose and get the work done. And the vast variety of material,  training videos and courses was the enemy for me, because I was so exited about learning so many interesting things about Machine Learning, Deep Learning, Computer Vision, about the advances in Autonomous Underwater Vehicles (AUVs) and many more, were I realised that I'm not productive at all learning concepts that were irrelevant to my cause. </p>
+    <p>Realising the problem was a catalyst to sit down and plan what I needed, at the time, to learn and at what concepts I should be focusing on. So, my Machine Learning study plan included the following:</p>
+    <ul>
+    <li>Get started with programming (Python)</li>
+    <li>Find the relevant material need for Machine Leaning<ul>
+    <li>Mathematics</li>
+    <li>Statistics</li>
+    <li>Linear Algebra</li>
+    <li>Calculus</li>
+    <li>Algorithms</li></ul></li>
+    <li>Take online classes <ul>
+    <li>MIT OpenCourseWare</li>
+    <li>Coursera </li>
+    <li>Udacity</li></ul></li>
+    <li>Projects<ul>
+    <li>Image classifier</li>
+    <li>Object detection</li>
+    <li>GANs</li></ul></li>
+    <li>Application of what I learned in my project<ul>
+    <li>Underwater image classifier</li>
+    <li>Underwater object detection</li>
+    <li>Underwater cycleGAN image dataset </li></ul></li>
+    </ul>
+    <h4 id="programmingandpython">Programming and Python</h4>
+    <p>Programming for me was on top of my priorities because I had no previous xperience, though I did some assignments during my Bachelor’s and Master’s degrees using mainly Matlab and to some extent Python.&nbsp;<br />
+    Of course for someone that starts to learn ML the language of choice, in most cases is Python. I don’t like to stress how I learned Python or what resources I used here (I might go my experience learning Python in another writing), rather give a quick overview. So, I started to learn Python by doing what everybody else does, watching youtube videos. Soon I realised that watching videos and doing tutorials won't help me to get into programming. So I started to learn the basics by developing small programs that ultimately will be useful to my PhD project. Such programs helped me to automate folder and file manipulation, image pre-processing, object extraction from annotated images, web scraping to download underwater images and videos, frame extraction from underwater videos etc. The above "<em>side projects</em>" wasn't the most efficient or the most elegant in terms of construction, but helped me not to fall into the loop of spending my time watching videos, pretend that I understand what I was watching and at the end not know to how to loop over a list. Programming my own staff helped me to understand that:</p>
+    <ul>
+    <li><strong>Understand why to program</strong> - Programming is not about the language we use, rather how we use the language to do some tasks (particularly the boring ones) for us</li>
+    <li><strong>What area we are interested</strong> - It would be useless if we spend countless ours to learn let say C or C++ and at the end we would like to be a front-end web developers (even though I tried C++ and helped me a lot to better understand how the program works, and most importantly to comprehend programming principles).</li>
+    <li><strong>One equals to 0</strong> - Definitely need to spend time to learn at least a second language once feel confidence with the first language. </li>
+    <li><strong>Practice makes perfect</strong> - Let me be honest, at the beginning I was overwhelmed by the amount of what I needed to learn to create even the simplest program. It was so difficult for me because I was lost in the countless videos and tutorials, and I was thinking that OK I'm not good at programming lets just quit. Fortunately, I'm a very stubborn person so I kept going. Then, I noticed that I just needed to apply my problem solving skills had acquired so far, brake the problem into small manageable pieces and use simple language features (Python) to solve that problem. After that I needed to keep go over and over again, make practice and try to improve even a tiny aspect of the program I wrote. At the end, whit practice and patience I could easily write scripts for my needs.     </li>
+    </ul>
+    <h4 id="machinelearningonlinematerial">Machine Learning online material</h4>
+    <p>For maths I wanted to get up to date as quickly as possible, since I already knew most of the material I needed, and for this reason I mostly used online materials. Some excellent resources include: 
+    <strong>Linear Algebra and Calculus</strong>
+        - <a href="https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/video_galleries/video-lectures/">Video Lectures | Linear Algebra | Mathematics | MIT OpenCourseWare</a> 
+        - <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">Essence of linear algebra - YouTube</a>
+        - <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr">Essence of calculus - YouTube</a>
+    <strong>Statistical Machine Learning</strong>
+        - <a href="https://ocw.mit.edu/courses/18-650-statistics-for-applications-fall-2016/video_galleries/lecture-videos/">Lecture Videos | Statistics for Applications | Mathematics | MIT OpenCourseWare</a>
+        - <a href="https://www.youtube.com/watch?v=tcusIOfI_GM">Statistics for Data Science & Machine Learning - YouTube</a>
+        - <a href="https://www.youtube.com/playlist?list=PL05umP7R6ij2XCvrRzLokX6EoHWaGA2cC">Statistical Machine Learning — Ulrike von Luxburg, 2020 - YouTube</a></p>
+    <p>Additionally to the online materials I used some math text books that I found interested to study:</p>
+    <ul>
+    <li><a href="https://mml-book.github.io/">Mathematics for Machine Learning</a> The Book covers the foundations need to use in ML as well as the use of different ml algorithms that using the theoretical concepts.</li>
+    </ul>
+    <h4 id="onlinecourses">Online Courses</h4>
+    <ul>
+    <li><a href="https://ocw.mit.edu/courses/6-867-machine-learning-fall-2006/">Machine Learning MIT OpenCourseWare</a></li>
+    <li><a href="https://www.coursera.org/learn/machine-learning">Machine Learning by Stanford University | Coursera</a></li>
+    <li><a href="https://www.udacity.com/course/machine-learning-engineer-for-microsoft-azure-nanodegree--nd00333">Become a Machine Learning Engineer</a></li>
+    <li><a href="http://introtodeeplearning.com/">MIT Deep Learning 6.S191</a></li>
+    <li><a href="https://www.coursera.org/specializations/deep-learning">Deep Learning by deeplearning.ai | Coursera</a></li>
+    </ul>
+    <h4 id="projects">Projects</h4>
+    <p>I started to do the projects that the courses provided, and then once I was confident enough I applied what I knew to my own project.</p>
+    <ul>
+    <li><a href="https://ipolymenis.xyz/cat-vs-dog-img-classifier.html">CAT-VS-DOG IMAGE CLASSIFIER</a></li>
+    <li>Object detection using YOLO algorithm</li>
+    <li><a href="https://github.com/ioannispol/Udacity_Machine_Learning_ND/tree/main/Capstone_Project/dog-breed-classifier-project">Dog-breed-classifier-project</a></li>
+    <li>Image-to-Image translation using cycleGANs</li>
+    </ul>
+    <h4 id="applicationtomyproject">Application to my project</h4>
+    <ul>
+    <li><a href="https://github.com/ioannispol/underwater_classifier">underwater_classifier</a></li>
+    <li>YOLO underwater object detection</li>
+    <li><a href="https://github.com/ioannispol/UnderWaterGAN">UnderWaterGAN: CycleGAN model to generate images with underwater features</a></li>
+    </ul>
+    <h2 id="whatididright">What I did right</h2>
+    <p>Sometimes I think that I could have spent my time and energy more efficient when studying Machine Learning. But in a broader view, I did learn the concepts in the correct order. I started with the mathematics required to get confident when using ML, and at the same time studied Python and Programming, then started to study machine learning, next followed Deep Learning and Computer vision. Finally, I used the concepts to work on my PhD project. 
+    To give the above studying approach on a time scale, the time I devote to each of these concepts is as follows:</p>
+    <ol>
+    <li><strong>Mathematics</strong>  - The first step was to revise mathematics that I already knew and study the concepts that I was less familiar with, such as statistics. So, I spend a good month revising Linear Algebra, Matrix Algebra and calculus, and another month studying statistics. (<em>2 months</em>)</li>
+    <li><strong>Programming (Python)</strong> - I would be lying if I said that I have studied programming and particularly <em>Python</em> for the past 3 years, but I don't exaggerate about that. Ok, I didn't spend the last 3 years solely studying programming and Python, but I definitely constantly practising and trying to develop my skills (<em>3 years</em>).  </li>
+    <li><strong>Machine Learning</strong> - Again, same with the programming I am constantly study and researching about ML, DL and CV. The field is so rapidly evolving that need to be alert about the advances happening. It's quite difficult to keep up but fortunately there is a solution for that. Some time ago I came across with an amazing tool, the <a href="https://researchrabbitapp.com/">Research rabbit</a> platform and it saved my day. Research rabbit is an online platform that can sync the research tools such as Zootero and Mendelay, and visually represent the papers connected to the paper we are working with, and all the papers that referencing the one we are working with.   </li>
+    </ol>
+    <h2 id="whatididwrong">What I did wrong</h2>
+    <p>When you start to learn something new will never think that the way you do the preparation, the research and in general the path you follow might be a wrong. And even if you do know that might need to do things in a different way, at the time you will realize it, you have already spent a good amount of time. So, for me there isn't something that I wish I had do it differently, except the fact that in some cases I spent much more time that really needed in topics that wasn't so important, or at least not important to my project anyway. For example, I remember spending a fair amount of time revising Linear Algebra (LA) and Matrices when I started with ML. This of course isn't so bad, but I think that I could use that time more wisely, so to spend 1/3 of the time in LA revision and the rest of the time to implement that knowledge in Python.    </p>
+    <h2 id="finalthoughts">Final thoughts</h2>
+    <p>As my PhD studies are inevitably approaching the end I had the urge to go through where I was and what I've done so far. This writing is more like a clearing my thoughts about the journey I decided to take almost 3 years ago, and I realised that I enjoy to learn <em>Programming</em>, research about <em>Machine Learning</em>, and do <em>Research</em>.     </p></div>
+]]></description>
+</item>
+
+
+<item>
 <title>How to prepare for an MSc. How is it different to BSc?</title>
 <guid>https://ipolymenis.xyz/2022.html#how-to-prepare-for-an-msc-how-is-it-different-to-bsc</guid>
 <pubDate>Wed, 13 Apr 2022 17:10:07 +0100</pubDate>
