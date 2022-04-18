@@ -12,6 +12,128 @@
 <!-- LB -->
 
 <item>
+<title>Automate Anaconda Environment creation</title>
+<guid>https://ipolymenis.xyz/2022.html#automate-anaconda-environment-creation</guid>
+<pubDate>Mon, 18 Apr 2022 10:33:23 +0100</pubDate>
+<description><![CDATA[
+<!-- directives:[] -->
+<div id="content"><h1 id="automateanacondaenvironmentcreation">Automate Anaconda  environment creation</h1>
+    <p style="text-align:center">
+        <img style="max-height:30em;max-width:30em;text-align: center" src=../images/bash-automation.jpg><a href="../images/bash-automation.jpg"></a>
+    </p>
+    <h3 id="takingthemanualstepsandcreateautomation">Taking the manual steps and create automation</h3>
+    <p>Creating a virtual environment in Anaconda is a straight forward task using the <code>conda create -n env-namme</code> command. By default, the new environment will be created in the folder of the anaconda/miniconda installation. For example in a Linux machine the environments are under the directory of <code>~/miniconda3/envs</code>. Now, if we are working in projects that involve creating multiple conda environments, it might become tedious to always creating this environments with the manual way, installing each and every package by sequentially type the commands on the terminal.  Of course we can add the most used packages to the <code>~/.condarc</code> file and save some time. But, the other day I had to create, <em>again</em>, a virtual environment and I thought that it might be useful to automate as much as possible I can the procedure of crating virtual environments. </p>
+    <p><strong>Prerequisites</strong></p>
+    <ul>
+    <li>Linux </li>
+    <li>For the script to work need the anaconda or miniconda to be installed (see my previous posts on how to install miniconda)</li>
+    <li>If other than the bash shell is used (for example zsh), need to make sure the script will be properly executed. The easiest way is to just add <code>#!/usr/bin/env bash</code> at the top of the script so we can run it even if we use other shells</li>
+    </ul>
+    <h2 id="designingthecondaenvautomation">Designing the conda-env-automation</h2>
+    <ol>
+    <li>To create a virt env we use the <code>conda create -n test-env</code> command. Since the script would be asking the user for the name of the env, need to have a <em>user input</em> for the <em>name of  env</em>.</li>
+    </ol>
+    <pre><code class="bash language-bash">echo env_name
+    </code></pre>
+    <ol start="2">
+    <li>Since, we use anaconda environments to work with different python versions and packages, need to have a input that determines the version of Python as well as the packages will be install during the environment creation.</li>
+    </ol>
+    <pre><code class="bash language-bash">conda create -n test-env python=3.x package1 package2
+    </code></pre>
+    <ol start="3">
+    <li>Also can ask to activate the newly created environment</li>
+    </ol>
+    <pre><code class="bash language-bash">conda activate test-env
+    </code></pre>
+    <h3 id="optionaloperations">Optional operations</h3>
+    <ol>
+    <li>Create an export (backup file) of the environment. This is helpful if someone else want to reproduce our work using the same environment.</li>
+    </ol>
+    <pre><code class="bash language-bash">conda test_env export &gt; environment_backup.yml
+    </code></pre>
+    <h4 id="adiagramrepresentationofthesteps">A diagram representation of the steps</h4>
+    <p style="text-align:center">
+        <img style="max-height:30em;max-width:30em;text-align: center" src=../images/conda-env-algorithm.png><a href="../images/conda-env-algorithm.png"></a>
+    </p>
+    <h4 id="codeimplementation">Code Implementation</h4>
+    <p>Initially will set a variable name for the location of the environments directory in the miniconda location. Also, will give the list of any existing environments. </p>
+    <pre><code class="bash language-bash">ENV_PATH="$HOME/miniconda3/envs"
+    echo "The folowing environments are installed:$(ls $ENV_PATH)"
+    </code></pre>
+    <p>Then, will check if the environment we like to crate exists and if so the process will exit the script</p>
+    <pre><code class="bash language-bash">dir_path="$ENV_PATH/$env_name"
+    
+    
+    if [ -d "$dir_path" ];
+    
+    then
+    
+        echo "$env_name environment exists."
+    
+        slee 1
+    
+        exit 0
+    
+    else
+    
+        echo "$env_name environment does not exist."
+    
+        sleep 1
+    
+        echo "Will create the $env_name conda environment"
+    
+    fi
+    </code></pre>
+    <p>The <code>dir_path</code> variable gives the location of the environment, if that exists in the <code>envs</code> folder, The <code>if</code> statement looks for the particular environment, and if that exists will exit the script, if not the will continue to create the environment. </p>
+    <p>The conda environments are used in the most of the cases to have a specific python version. So, the next part will ask for what python version of python we want. </p>
+    <pre><code class="bash language-bash">read -rp "Enter the Python version(only number): " py_ver
+    </code></pre>
+    <p>Also, most of the times we install particular packages will we create the environment. This can be done with following</p>
+    <pre><code class="bash language-bash">read -rp "Enter additional packages to install: " packages
+    </code></pre>
+    <p>Now that we have the python version and the packages we can create the environment</p>
+    <pre><code class="bash language-bash">conda create -n $env_name python=$py_ver $packages -y
+    </code></pre>
+    <p>The environment now has been crated and can use it by activating it with the <code>conda activate test-env</code> for example. 
+    We can further automate the process and prompt a question if we want to use the env after the creation. The script will ask if we want to activate the environment, if yes specified then will enter to it and if no will continue to the next step, witch is to create an export of the environment. </p>
+    <pre><code class="bash language-bash">read -rp "Do you like to activate $env_name environemnt?" ask &amp;&amp;
+    
+        if [ "$ask" = "y" ]; then
+    
+            printf "Activating the environment...\\n"
+    
+            conda activate $env_name
+    
+        else
+    
+            continue
+    
+        fi
+    </code></pre>
+    <p>Sometimes we might need to use a specific environment to another computer, or to send it to colleagues in our team for example to replicate the work we've done. This can be done if we export the <code>.yml</code> of the environment. So, the process can be automated to export the basic environment created initially. The script will ask if we want a backup file, if no the script will exit. If we do want to create a backup file of the environment then need to activate it and export the environment. Last, will deactivate the environment and exit the script. </p>
+    <pre><code class="bash language-bash">read -rp "Do you want to create a backup for the $env_name?" ask &amp;&amp;
+    
+        if [ "$ask" = "y" ]; then
+    
+            printf "Creating the backup.yml\n"
+    
+            conda activate $env_name &amp;&amp; conda env export &gt; "$env_name.yml"
+    
+            conda deactivate
+    
+            echo "The backup file crated."
+    
+        else
+    
+            exit 0
+    
+        fi
+    </code></pre></div>
+]]></description>
+</item>
+
+
+<item>
 <title>3yrs into Machine Learning as a PhD student</title>
 <guid>https://ipolymenis.xyz/2022.html#3yrs-into-machine-learning-as-a-phd-student</guid>
 <pubDate>Thu, 14 Apr 2022 17:16:21 +0100</pubDate>
