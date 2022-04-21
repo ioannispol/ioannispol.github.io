@@ -1,114 +1,110 @@
 <!-- directives:[] -->
-<div id="content"><h1 id="automateanacondaenvironmentcreation">Automate Anaconda  environment creation</h1>
-    <p style="text-align:center">
-        <img style="max-height:30em;max-width:30em;text-align: center" src=../images/bash-automation.jpg><a href="../images/bash-automation.jpg"></a>
-    </p>
-    <h3 id="takingthemanualstepsandcreateautomation">Taking the manual steps and create automation</h3>
-    <p>Creating a virtual environment in Anaconda is a straight forward task using the <code>conda create -n env-namme</code> command. By default, the new environment will be created in the folder of the anaconda/miniconda installation. For example in a Linux machine the environments are under the directory of <code>~/miniconda3/envs</code>. Now, if we are working in projects that involve creating multiple conda environments, it might become tedious to always creating this environments with the manual way, installing each and every package by sequentially type the commands on the terminal.  Of course we can add the most used packages to the <code>~/.condarc</code> file and save some time. But, the other day I had to create, <em>again</em>, a virtual environment and I thought that it might be useful to automate as much as possible I can the procedure of crating virtual environments. </p>
-    <p><strong>Prerequisites</strong></p>
+<div id="content"><h1 id="underwatervehiclestechnologyadvances">Underwater Vehicles Technology Advances</h1>
+    <hr />
+    <h2 id="introduction">Introduction</h2>
+    <p>Autonomous underwater robots have become an integral part of both marine science and ocean engineering, and with the 
+    evolution of these sectors, the development of AUVs is heading towards full autonomy. A complete autonomous underwater 
+    vehicle will operate independently and will be able to act logically and methodically to accomplish the required task. Over the 
+    past years, many attempts have been made to apply autonomy on AUVs in the form of surveillance and data collection, yet a 
+    fully autonomous vehicle that will be able to act intelligently within the operating environment has not been achieved (Ridao et 
+    al., 2015; Sahoo et al., 2019).</p>
+    <p>From the beginning of the 90s, various projects focused on different aspects of underwater autonomy. One of the first 
+    attempts was made with the autonomous vehicle ODIN, which was equipped with a one degree of freedom robotic arm and 
+    was capable of operating either autonomously through an onboard computer or via a tethered cable (Choi et al., 1994). 
+    Another attempt towards autonomous vehicles was the OTTER project conducted by MBARI’s research programme in 1995. 
+    The vehicle was equipped with a robotic arm, cameras for object detection and a variety of sensors including depth sensors, 
+    and compass. OTTER’s mission was to retrieve an object from the seabed and it was one of the first vehicles with computer 
+    vision, and interestingly for the first time, the idea of “intelligent control” for an underwater robot and the design of a complete 
+    autonomous vehicle was presented (Wang et al., 1995). Another significant project which developed in that period was the 
+    AMADEUS subsea robot. The robot was designed to handle and grasp underwater objects and was equipped with a pair of 
+    three-fingered hydraulic robotic arms. The double robotic arm was innovative for the time as there was cooperation between 
+    the two arms for object manipulation and with the use of the three-finger gripper, it would be possible to control the pressure 
+    when grasping an object, which is significant for precise gripping (Lane et al., 1997). Although different projects have been 
+    developed over the past years with the focus on creating a fully autonomous underwater vehicle, there has not yet been a 
+    vehicle which will intelligently interact within its operating environment. Therefore, the current project will develop a system 
+    capable of critically acting for underwater intervention and fill the gap of previous research.</p>
+    <h2 id="auvstateoftheart">AUV State-of-the-art</h2>
+    <p>During the last two decades, different projects started to develop, and the focus was to create an AUV capable of intervention. 
+    These projects include the EU-Thermie funded SWIMMER, the ALIVE project, the SAUVIM project, the TRIDENT I-AUV project, 
+    the GIRONA 500 and finally the MARIS project. The SWIMMER vehicle was an AUV which was capable of transporting a work-
+    class ROV to a dock station at the seabed. Once the AUV autonomously docked to the underwater platform, the ROV was 
+    deployed to execute the operation. The ROV was connected with a fibre optic cable to the SWIMMER AUV, which was deployed 
+    to perform its mission, to dock in a predefined underwater platform. With this configuration, there is no need for a support 
+    vessel with the necessary equipment to deploy and operate the ROV (Evans et al., 2001). Even though the earlier projects, 
+    SWIMMER, OTTER and AMADEUS, were pioneering for their era, they were still dependent on human supervision and guidance 
+    to perform the given task; this was revolutionised with the ALIVE project.</p>
+    <p>The ALIVE project was a breakthrough for underwater intervention missions due to its abilities in conducting physical 
+    manipulations while hovering to keep its position. The AUV was fitted with a seven degrees of freedom robotic arm and was 
+    capable of performing autonomous docking. The docking procedure was performed based on the data received from sonars 
+    and cameras, which allowed the robot to estimate its position at any time. Once the docking had been achieved, the robotic 
+    arm was deployed to perform the preprogrammed task, which was the opening and closing of a valve in an underwater panel 
+    (Evans et al., 2003).</p>
+    <p>The advances in underwater robotics were continued with the SAUVIM project which was funded by the University of Hawaii. 
+    The Hawaiian project was conducted over the same period as the ALIVE project but followed a different approach for 
+    underwater intervention. The vehicle was designed to perform the manipulation task while hovering at the target area and to 
+    achieve the task, three different localisation approaches were used. Firstly, a sonar was used to perform long-distance 
+    searching to find the location of the desired target. Secondly, a different sonar was used for object identification to set the 
+    underwater robot to a specific position for manipulation. Finally, when the robot was at the manipulation position, an ultrasonic 
+    camera was used to perform the actual intervention. The robot was fitted with a seven degrees of freedom arm with a camera 
+    on its palm. During the tests, the robot performance was deemed satisfactory since it was able to identify and recover the 
+    target object (Marani et al., 2009).</p>
+    <p>In 2010 a new approach to underwater intervention was proposed with TRIDENT, an EU funded project. This project proposed 
+    flexible underwater operations using two different vehicles, one a surface vehicle and the second as the Intervention AUV (I-
+    AUV) which initially performs mapping of the area of interest then returns to transmit the data to the operator. Then, the 
+    operator decides on the desired task and the interventions, and the vehicle descends again to perform the instructed mission. 
+    The TRIDENT project was tested in an underwater environment and assessed for its cooperation capability between the 
+    vehicles and for intervention skills of the I-AUV to execute the recovery action (Ridao et al., 2015; Sanz et al., 2012).</p>
+    <p>The TRIDENT project was used to host another newly developed AUV capable of intervention, the GIRONA 500, which was 
+    developed by the Spanish University of Girona in 2012. The underwater vehicle was designed to operate in depths of up to 
+    500m and to be as reconfigurable as possible. The vehicle’s capacity to carry a variety of equipment and instruments 
+    depending on its mission was a distinct characteristic of the particular project. Also, the AUV was fitted with a range of 
+    thrusters where, in its most simple setup, it used three of them to control the vertical and the horizontal motion of the vehicle. 
+    In contrast, it could be fitted with eight thrusters which gave the vehicle the capability to operate in all six degrees of freedom 
+    for intervention tasks (Ribas et al., 2012).</p>
+    <p>GIRONA 500 is controlled using two computers, one is a low power computer which is used for the main tasks of the robot, 
+    and the second computer is more powerful and is dedicated for computational demand processes such as mapping and image 
+    processing. The second computer is operated only when it is needed; thus, power saving can be achieved. The software 
+    architecture implemented on the robot is based on three different operational layers which may exist independently. One layer 
+    is used for mission planning which can be done autonomously or by being given instructions through a language named 
+    Mission Controlled Language (MCL) and is executed under the vehicles software architecture, named Component 
+    Oriented Layer-Based Architecture for Autonomy (COLA2). The next layer is used to control the robotic arm, the execution layer, 
+    through cameras, sensors and actuators. The precise position of the arm can be set according to the 
+    target’s position using Petri Nets to perform the manipulation task. A full description of Petri Nets is given by (Palomeras et al., 2008). 
+    Lastly, the final layer is used to coordinate the mission and the execution layers. The coordination 
+    layer is referred to as the reactive layer and can execute a variety of tasks from the most simple such as starting a camera and 
+    different sensors, to the more advanced and complex such as 3-D navigation and object manipulation (Ribas 
+    et al., 2011).</p>
+    <p>The capabilities of GIRONA 500 were tested in an underwater environment where different tasks were given to the vehicle 
+    such as autonomous docking, valve manipulation and object recovery. Notably, the task of turning a valve was a milestone for 
+    underwater intervention since the robot had to perform the turning operation based on the Learning by Demonstration 
+    technique (LbD), also known as Programming by Demonstration (PbD) (Carrera et al., 2014). The LbD technique is based on 
+    the idea that the learning process can be achieved in an automatic programming method where the user presents or 
+    demonstrates, the new action or behaviour that the robot should learn rather than programming it through coding (Mohammad 
+    &amp; Nishida, 2015).</p>
+    <p>Finally, the Italian project MARIS developed with a focus on manipulation mainly for the offshore industry as well as for a 
+    variety of scientific tasks such as ocean surveying. The underwater robot uses a combination of sensors for navigation such 
+    as Doppler Velocity Loggers (DVL) and acoustic methods to be able to orient itself with reference to the seabed. The robot can 
+    detect objects using stereovision technology to generate a more accurate 3-D interpretation of the object. Moreover, it uses a 
+    sophisticated robotic arm which has been designed to intelligently perform grasping using an integrated system of force-
+    torque to “sense” the object. Another feature of the MARIS project is that the operation can be performed using one or more 
+    vehicles, where they can coordinate to execute the grasping of the object and then to transport it with safety for the object 
+    and the vehicle (Casalino et al., 2016).</p>
+    <h2 id="summary">Summary</h2>
+    <p>A variety of projects have been developed with the focus of underwater intervention. All projects have developed AUVs that 
+    are capable of autonomous data collection using a variety of onboard sensors, and also have the ability of physical 
+    intervention by performing pre-programmed tasks.</p>
+    <hr />
+    <h2 id="references">References</h2>
     <ul>
-    <li>Linux </li>
-    <li>For the script to work need the anaconda or miniconda to be installed (see my previous posts on how to install miniconda)</li>
-    <li>If other than the bash shell is used (for example zsh), need to make sure the script will be properly executed. The easiest way is to just add <code>#!/usr/bin/env bash</code> at the top of the script so we can run it even if we use other shells</li>
-    </ul>
-    <h2 id="designingthecondaenvautomation">Designing the conda-env-automation</h2>
-    <ol>
-    <li>To create a virt env we use the <code>conda create -n test-env</code> command. Since the script would be asking the user for the name of the env, need to have a <em>user input</em> for the <em>name of  env</em>.</li>
-    </ol>
-    <pre><code class="bash language-bash">echo env_name
-    </code></pre>
-    <ol start="2">
-    <li>Since, we use anaconda environments to work with different python versions and packages, need to have a input that determines the version of Python as well as the packages will be install during the environment creation.</li>
-    </ol>
-    <pre><code class="bash language-bash">conda create -n test-env python=3.x package1 package2
-    </code></pre>
-    <ol start="3">
-    <li>Also can ask to activate the newly created environment</li>
-    </ol>
-    <pre><code class="bash language-bash">conda activate test-env
-    </code></pre>
-    <h3 id="optionaloperations">Optional operations</h3>
-    <ol>
-    <li>Create an export (backup file) of the environment. This is helpful if someone else want to reproduce our work using the same environment.</li>
-    </ol>
-    <pre><code class="bash language-bash">conda test_env export &gt; environment_backup.yml
-    </code></pre>
-    <h4 id="adiagramrepresentationofthesteps">A diagram representation of the steps</h4>
-    <p style="text-align:center">
-        <img style="max-height:30em;max-width:30em;text-align: center" src=../images/conda-env-algorithm.png><a href="../images/conda-env-algorithm.png"></a>
-    </p>
-    <h4 id="codeimplementation">Code Implementation</h4>
-    <p>Initially will set a variable name for the location of the environments directory in the miniconda location. Also, will give the list of any existing environments. </p>
-    <pre><code class="bash language-bash">ENV_PATH="$HOME/miniconda3/envs"
-    echo "The folowing environments are installed:$(ls $ENV_PATH)"
-    </code></pre>
-    <p>Then, will check if the environment we like to crate exists and if so the process will exit the script</p>
-    <pre><code class="bash language-bash">dir_path="$ENV_PATH/$env_name"
-    
-    
-    if [ -d "$dir_path" ];
-    
-    then
-    
-        echo "$env_name environment exists."
-    
-        sleep 1
-    
-        exit 0
-    
-    else
-    
-        echo "$env_name environment does not exist."
-    
-        sleep 1
-    
-        echo "Will create the $env_name conda environment"
-    
-    fi
-    </code></pre>
-    <p>The <code>dir_path</code> variable gives the location of the environment, if that exists in the <code>envs</code> folder, The <code>if</code> statement looks for the particular environment, and if that exists will exit the script, if not the will continue to create the environment. </p>
-    <p>The conda environments are used in the most of the cases to have a specific python version. So, the next part will ask for what python version of python we want. </p>
-    <pre><code class="bash language-bash">read -rp "Enter the Python version(only number): " py_ver
-    </code></pre>
-    <p>Also, most of the times we install particular packages will we create the environment. This can be done with following</p>
-    <pre><code class="bash language-bash">read -rp "Enter additional packages to install: " packages
-    </code></pre>
-    <p>Now that we have the python version and the packages we can create the environment</p>
-    <pre><code class="bash language-bash">conda create -n $env_name python=$py_ver $packages -y
-    </code></pre>
-    <p>The environment now has been crated and can use it by activating it with the <code>conda activate test-env</code> for example. 
-    We can further automate the process and prompt a question if we want to use the env after the creation. The script will ask if we want to activate the environment, if yes specified then will enter to it and if no will continue to the next step, witch is to create an export of the environment. </p>
-    <pre><code class="bash language-bash">read -rp "Do you like to activate $env_name environemnt?" ask &amp;&amp;
-    
-        if [ "$ask" = "y" ]; then
-    
-            printf "Activating the environment...\\n"
-    
-            conda activate $env_name
-    
-        else
-    
-            continue
-    
-        fi
-    </code></pre>
-    <p>Sometimes we might need to use a specific environment to another computer, or to send it to colleagues in our team for example to replicate the work we've done. This can be done if we export the <code>.yml</code> of the environment. So, the process can be automated to export the basic environment created initially. The script will ask if we want a backup file, if no the script will exit. If we do want to create a backup file of the environment then need to activate it and export the environment. Last, will deactivate the environment and exit the script. </p>
-    <pre><code class="bash language-bash">read -rp "Do you want to create a backup for the $env_name?" ask &amp;&amp;
-    
-        if [ "$ask" = "y" ]; then
-    
-            printf "Creating the backup.yml\n"
-    
-            conda activate $env_name &amp;&amp; conda env export &gt; "$env_name.yml"
-    
-            conda deactivate
-    
-            echo "The backup file crated."
-    
-        else
-    
-            exit 0
-    
-        fi
-    </code></pre></div>
-    
+    <li>Casalino, G., Caccia, M., Caselli, S., Melchiorri, C., Antonelli, G., Caiti, A., Indiveri, G., Cannata, G., Simetti, E., Torelli, S., Sperindè, A., Wanderlingh, F., Muscolo, G., Bibuli, M., Bruzzone, G., Zereik, E., Odetti, A., Spirandelli, E., Ranieri, A., et al. (2016) Underwater intervention robotics: An outline of the Italian national project Maris. Marine Technology Society Journal. 50 (4), 98–107.</li>
+    <li>Carrera, A., Palomeras, N., Ribas, D., Kormushev, P. &amp; Carreras, M. (2014) ’An Intervention-AUV learns how to perform an underwater valve turning’, in Oceans 2014 - taipei. [Online]. November 2014 Institute of Electrical; Electronics Engineers Inc.</li>
+    <li>Choi, S.K., Takashige, G.Y. &amp; Yuh, J. (1994) ’Experimental study on an underwater robotic vehicle: ODIN’, in IEEE sympsium on autonomous underwater vehicle technology. [Online]. 1994 IEEE. pp. 79–84.</li>
+    <li>Evans, J.C., Keller, K.M., Smith, J.S., Marty, P. &amp; Rigaud, V. (2001) ’Docking techniques and evaluation trials of the SWIMMER AUV: An autonomous deployment AUV for workclass ROVs’, in Oceans conference record (ieee). [Online]. 2001 pp. 520–528.</li>
+    <li>Lane, D.M., O’Brien, D.J., Pickett, M., Davies, J.B.C., Robinson, G., Jones, D., Scott, E., Casalino, G., Bartolini, G., Cannata, G., Ferrara, A., Angelleti, D., Coccoli, M., Veruggio, G., Bono, R., Virgili, P., Canals, M., Pallas, R., Gracia, E., et al. (1997) AMADEUS: Advanced Manipulation for Deep Underwater Sampling. IEEE Robotics and Automation Magazine. 4 (4), 34–45.</li>
+    <li>Marani, G., Choi, S.K. &amp; Yuh, J. (2009) Underwater autonomous manipulation for intervention missions AUVs. Ocean Engineering. 36 (1), 15–23.</li>
+    <li>Mohammad, Y. &amp; Nishida, T. (2015) ’Learning from demonstration’, in Advanced information and knowledge processing. [Online]. pp. 293–317.</li>
+    <li>Ribas, D., Palomeras, N., Ridao, P., Carreras, M. &amp; Mallios, A. (2012) Girona 500 AUV: From survey to intervention. IEEE/ASME Transactions on Mechatronics. 17 (1), 46–53.</li>
+    <li>Ridao, P., Carreras, M., Ribas, D., Sanz, P.J. &amp; Oliver, G. (2015) Intervention AUVs: The next challenge. Annual Reviews in Control. 40227–241.</li>
+    <li>Sahoo, A., Dwivedy, S.K. &amp; Robi, P.S. (2019) Advancements in the field of autonomous underwater vehicle. Ocean Engineering. 181145–160.</li>
+    <li>Wang, H.H., Rock, S.M. &amp; Lee, M.J. (1995) ’Experiments in automatic retrieval of underwater objects with an AUV’, in Oceans conference record (ieee). [Online]. 1995 IEEE. pp. 366–373.</li>
+    </ul></div>
