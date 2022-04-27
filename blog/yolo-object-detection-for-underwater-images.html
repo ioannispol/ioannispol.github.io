@@ -1,3 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>YOLO Object Detection for Underwater Images</title>
+<link rel='stylesheet' type='text/css' href='../style.css'>
+<meta charset='utf-8'/>
+<meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no'>
+</head>
+<body>
+<h1>YOLO Object Detection for Underwater Images</h1>
+<nav>
+<ul>
+<li><a href='../index.html'>🏡 HOME</a></li>
+<li><a href='../blog.html'>📝 BLOG</a></li>
+<li><a href='../projects.html'>🤖 PROJECTS</a></li>
+<li><a href='../photography.html'>📸 PHOTOGRAPHY</a></li>
+<li><a href='../bio.html'>ABOUTME</a></li>
+</ul>
+</nav>
+<small>[<a href='../2022.html#yolo-object-detection-for-underwater-images'>link</a>&mdash;<a href='yolo-object-detection-for-underwater-images.html'>standalone</a>]</small>
+<main>
 <!-- directives:[] -->
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -40,7 +61,7 @@
     the given image in contrast with the naive sliding window approach where for each image the algorithm (DPM, R-CNN etc) needs to scan it 
     step by step to find the region of interest, the detected objects. The R-CNN for example needs classify around 2000 regions per image 
     which makes the algorithm very time consuming and it's not ideal for real time applications.</p>
-    <p>The figure below shows how the YOLO model creates an $S x S$ grid in the input image and then for each grid cell creates multiple bounding 
+    <p>The figure below shows how the YOLO model creates an $S x S$ grid in the input image and then for each grid cell creates multipe bounding 
     boxes as well as class probability map, and at the end gives the final predictions of the objects in the image.</p>
     <p style="text-align:center">
         <img style="max-height:30em;max-width:30em;text-align: center" src=../images/yolo_paper.png><a href="../images/yolo_paper.png"></a>
@@ -172,4 +193,9 @@
 
     <hr />
     <h2 id="references">References</h2>
-    <p>[1] J. Redmon, S. Divvala, R. Girshick, and A. Farhadi,  You Only Look Once: Unified, Real-Time Object Detection&nbsp;, arXiv:1506.02640 [cs], May 2016, Accessed: Apr. 02, 2021. [Online]. Available: <a href="https://arxiv.org/pdf/1506.02640v5.pdf">http://arxiv.org/abs/1506.02640</a></p></div>
+    <p>[1] J. Redmon, S. Divvala, R. Girshick, and A. Farhadi,  You Only Look Once: Unified, Real-Time Object Detection&nbsp;, arXiv:1506.02640 [cs], May 2016, Accessed: Apr. 02, 2021. [Online]. Available: <a href="https://arxiv.org/pdf/1506.02640v5.pdf">http://arxiv.org/abs/1506.02640</a></p></div>
+</main>
+<footer>by <strong><a href='https://ipolymenis.xyz/'>Ioannis Polymenis</a></strong></footer>
+</body>
+
+</html>
