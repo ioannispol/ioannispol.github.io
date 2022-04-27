@@ -100,7 +100,9 @@
     </ul>
     <p>The <strong>predictions</strong> shape will be \(S, S, 15\) where there is and additional probability score and four extra bounding box predictions.</p>
     <h2 id="themodelarchitecture">The model architecture</h2>
-    <p>!model.png</p>
+    <p style="text-align:center">
+        <img style="max-height:30em;max-width:30em;text-align: center" src=../images/model.png><a href="../images/model.png"></a>
+    </p>
     <p>The original YOLO model consists of 24 convolutional layers followed by 2 fully connected layers.</p>
     <p>The model accepts 448x448 images and at the first layer has a 7x7 kernel with 64 output filters with stride of 2 (<strong>also need to have a 
     padding of 3 to much the dimensions</strong>), also there is a 2x2 Maxpool Layer with the stride of 2. Similarly, the rest of the model consists 
