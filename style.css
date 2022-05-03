@@ -9,7 +9,7 @@ body {
 	max-width: 850px;
 	margin-left: auto;
 	margin-right: auto;
-	font-family: calibri;
+	font-style: sans-serif;
 }
 
 main {
@@ -33,6 +33,56 @@ font-family:  Garamond, Serif;
 text-align: center;
 }
 
+main, nav, footer{
+	box-shadow: 5px 5px 5px 5px rgba( 0, 0, 0, 0.3) ;
+}
+
+nav,.menu-btn {
+	font-variant: small-caps ;
+}
+
+nav,footer, .menu-btn {
+	text-align: center ;
+	clear: both ;
+	background: #232F33 ;
+	border-radius: 20px ;
+	margin: auto ;
+	border: dashed 1px #555 ;
+	max-width: 850px ;
+}
+
+footer {
+	color: #ccc ;
+	margin-top: 1em ;
+    font-size: small ;
+	overflow-wrap: break-word ;
+}
+
+nav {
+	margin-bottom: 1em;
+	max-width: 50px ;
+}
+
+nav li,footer li, .menu-btn {
+	display: inline-block ;
+	list-style: none ;
+	background: #111 ;
+	border-radius: 10px ;
+	padding: .5em ;
+	max-width: 10em ;
+}
+
+nav ul, footer ul, #taglist {
+	padding: 0;
+	margin: .5em;
+}
+
+nav a:hover li, footer a:hover li,#tagcloud a:hover li {
+	background: steelblue ;
+	color: black ;
+	box-shadow: 2px 2px cyan ;
+}
+
 h1 {
 	font-size: 44px;
 }
@@ -46,7 +96,7 @@ font-size: xx-large;
 text-align: center;
 }
 
-nav, footer {
+nav, footer, .menu-btn {
 text-align: center;
 color: #ffffff;
 clear: both;
@@ -135,3 +185,52 @@ margin-left: auto;
 margin-right: auto;
 width: 50%;
 }
+
+/* Add Dropdown menu
+I have issues with the font type when renering the drop menu
+It always appears to have the Arial font, so I explicitly 
+add the "Times New Roman".
+My body class have font-style: sans-serif; --> TO CHECK
+*/
+
+.menu-btn {
+	font-family: "Times New Roman";
+	font-size: 18px;
+	padding: .5px;
+	border: none;
+ }
+ .dropdown-menu {
+	position: relative;
+	display: inline-block;
+ }
+ .menu-content {
+	display: none;
+	position: absolute;
+	background-color: #232F33;
+	min-width: 140px;
+	z-index: 1;
+ }
+
+ .links,.links-hidden{
+	display: inline-block;
+	color: rgb(255, 255, 255);
+	padding: 12px 16px;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bold;
+ }
+ .links-hidden{
+	display: block;
+ }
+ .links{
+	display: inline-block;
+ }
+ .links-hidden:hover,.links:hover {
+	background-color: steelblue;
+ }
+ .dropdown-menu:hover .menu-content {
+	display: block;
+ }
+ .dropdown-menu:hover .menu-btn {
+	background-color: cyan;
+ }
