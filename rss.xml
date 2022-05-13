@@ -12,6 +12,45 @@
 <!-- LB -->
 
 <item>
+<title>The scientific Method</title>
+<guid>https://ipolymenis.xyz/2022.html#the-scientific-method</guid>
+<pubDate>Fri, 13 May 2022 16:12:20 +0100</pubDate>
+<description><![CDATA[
+<!-- directives:[] -->
+			<div id="content"><h1 id="thescientificmethod">The Scientific Method</h1>
+
+				<p style="text-align:center">
+					<img style="max-height:30em;max-width:30em;text-align: center" src=../images/Hadoop-components.jpg><a href="../images/Hadoop-components.jpg"></a>
+				</p>
+<p>The cultural and economic impact of technology and science is immeasurable. They alter a great deal of what we see on a regular basis. Computers, phones, and other consumer gadgets are apparent instances of how quickly technology changes and improves. For example, a quicker and smaller flash drive with 64 times as much memory costs just a fifth as much today as the first flash drive we bought for our PCs in the early 2000s. There has been an almost yearly increase in the amount of memory that can be stored in a single dollar.
+Even when it's not visible, scientific change is omnipresent. An everyday bread or rice bowl seems to be an old-fashioned, low-tech product from decades past. That is not the case, though! More and more aggressive crop diseases are constantly being developed, posing an ever-increasing danger to present crop kinds. Plant breeders must continue their efforts to protect crops from disease, enhance yields, and improve nutritional and other characteristics. After seven or eight years, very few crop types are still viable competitors. A decade without plant breeders would be terrible for wheat, rice, maize and potatoes and other big crops plagued by disease. Consequently, the bread we purchase today, or the rice we eat today, is a high-tech product that has undergone a decade of scientific and technological advancement. The same advances, benefited by the continuous development of science and technology based on the rigorous scientific method, are present in every aspect of our modern society.
+Now, scientists use various methods and procedures to arrive at their conclusions. The scientific method is one of the most extensively employed procedures, which entails following a set of steps to test a hypothesis and conclude. </p>
+<h2 id="whatdoesthetermscientificmethodimplytous">What does the term "scientific method" imply to us?</h2>
+<p>Any natural process may be studied, verified, or developed accurately and reliably using the scientific process. If the original observation is confirmed or disproved, they are carried out in accordance with an objective framework for scientific investigation and scientific interpretation of evidence. The scientific method requires scientists to pose questions, obtain and examine the evidence, and then evaluate whether the answers to their questions can be discovered via that evidence. Whether all information is supplied and discovered, scientists utilise this procedure to see if the solution is logical. Logic and rationality may be applied to scientific concerns via the scientific method. The scientific method has served as the gold standard for studying the natural world since the 17th century. It is the method through which scientists arrive at new findings and update their prior results. It involves a systematic approach to observation, measurement, experiment, and framing questions or hypotheses.</p>
+<h2 id="stepsfollowedinthescientificmethod">Steps followed in the scientific method</h2>
+<p>Steps taken in applying the scientific method are primarily determined by what we're doing and the laws that govern our particular field of study. But generally, the following six steps are widely used when we do science.</p>
+<p style="text-align:center">
+	<img style="max-height:30em;max-width:30em;text-align: center" src=../images/Hadoop-components.jpg><a href="../images/Hadoop-components.jpg"></a>
+</p>
+<ol>
+<li><strong>Question</strong>: Question formulation is the first stage in the scientific approach. One of the most common investigation openers is "<em>how</em>, <em>what</em>, <em>when</em>, <em>why</em>, <em>where</em>, <em>who</em>, or <em>which</em>?" It's vital that the question posed is quantifiable and <strong>can be answered through testing</strong>. As a scientific approach, it's important to note that it's not only numbers that may be used to measure and quantify it, but other outcomes as well, depending on the field.</li>
+<li><strong>Research</strong>: Research&nbsp;should be addressed next. Scientists use this stage to gather background&nbsp;information on what is already known about the subject (this step is also known as literature review). To be a scientist, one must constantly rely on reliable information. Ideally, they should look at the outcomes of previous studies in the area and compare them to the question from the first phase.</li>
+<li><strong>Hypothesis</strong>: The scientist may build a hypothesis after having sufficient background knowledge. This is a speculative response based on our research (an educated guess). It must be measurable and measurable in a way that can be tested. As a rule, they can be expressed in the form of an "If, then" statement, such as:
+	<!-- directives:[] -->
+	<div id="content"><pre><code class="txt language-txt">    "if I do this, then that will happen" 
+	</code></pre></div>
+
+</li>
+<li><strong>Test Hypothesis (Experiments)</strong>: Once the question and hypothesis have been formulated, the next step is to design the experiment to test that hypothesis. For experiments to be successful, the theory must be checked against actual data to see whether it holds up. Depending on the results of the tests, the level of confidence in the hypothesis increases or decreases. &nbsp;For a fair test needs to ensure that just one component is altered at a time while maintaining the rest of the parameters simultaneously. As a safeguard, the tests should be performed multiple times to ensure that the initial findings are not the product of an isolated case.</li>
+<li><strong>Observations (Result Analysis)</strong>: To test the&nbsp;hypothesis, we need to&nbsp;gather the&nbsp;data and examine it to discover whether it agrees or disagrees with it. It is relatively common for scientists to find out that their forecasts and hypotheses are incorrect. In these circumstances, they will report their findings before going back to the drawing board to develop new hypotheses and predictions based on what they learned from the experiment. In many ways, the scientific method is restarted in this way. However, even&nbsp;if they are satisfied with the first test results, they may choose to do more research and tests for further verification.</li>
+<li><strong>Communicate the Results</strong>: Finally, we'll need to share our findings with the community&nbsp;in the form of a written&nbsp;report, presentation, or other means such as conferences and public talks. Any study effort isn't made just because you've gathered data. The goal of&nbsp;the&nbsp;study is to develop and refine ideas that help society&nbsp;better understand how the world works. Thus, researchers must analyse the data and&nbsp;determine whether it provides insight into how humans communicate. As a result, we disseminate the information we've gleaned about human communication as much as possible. Consider that you've just finished a research project on the subject of conflict in romantic relationships. You may wish to share your findings with others who are interested in the same subject matter. </li>
+</ol>
+<p>Although the scientific approach might be appear simple when it's written down, but in the real world rarely follows exactly as described above. As a chef can alter a dish according to the available ingredients, a scientist may adjust the scientific method by omitting stages, hopping back and forth across phases, or repeating a subset of the processes due to unsatisfactory real-world circumstances. The scientific method's fundamental principles are upheld by scientists, who use observations, tests, and data to confirm or refute hypotheses about how phenomena function. Astronomy, for example, is a field of study where experimentation is not always feasible, making it difficult to verify hypotheses.</p></div>
+]]></description>
+</item>
+
+
+<item>
 <title>What is Big Data?</title>
 <guid>https://ipolymenis.xyz/2022.html#what-is-big-data</guid>
 <pubDate>Thu, 05 May 2022 14:10:51 +0100</pubDate>
